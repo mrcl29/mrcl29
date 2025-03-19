@@ -1,23 +1,29 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import './App.css'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/navbar/Navbar.jsx";  // Barra de navegación
 import MainLayout from "./components/layouts/MainLayout.jsx";
-import Home from "./components/pages/Home";
+import Home from "./components/pages/Home.jsx";
+import About from "./components/pages/About.jsx";
+import Contact from "./components/pages/Contact.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [currentPage, setCurrentPage] = useState("home"); // Estado para controlar la página actual
+
+  // Función para manejar el cambio de contenido
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
 
   return (
-    <Router>
+    <>
+      <Navbar onPageChange={handlePageChange} />  {/* Pasamos la función para manejar el cambio */}
       <MainLayout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {/*<Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} /> */}
-        </Routes>
+        {currentPage === "home" && <Home />}
+        {currentPage === "about" && <About />}
+        {currentPage === "contact" && <Contact />}
       </MainLayout>
-    </Router>
-  )
+    </>
+  );
 }
 
-export default App
+export default App;

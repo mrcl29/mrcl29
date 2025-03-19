@@ -1,8 +1,8 @@
-const NavCard = ({ title, route="/" }) => {
+const NavCard = ({ title, route="home", onPageChange }) => {
   return (
     <div className="group relative hover:scale-110 transition-all duration-300">
       <div className="text-black font-bold group-hover:text-black-700 text-base md:text-lg lg:text-xl">
-        <a href={route}>{title}</a>
+        <button onClick={() => onPageChange(route)}><a>{title}</a></button>
       </div>
       <span className="absolute left-0 bottom-0 w-full h-0.5 bg-black scale-x-0 group-hover:scale-x-100 transition-transform duration-400"></span>
     </div>

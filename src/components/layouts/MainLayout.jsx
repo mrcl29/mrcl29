@@ -1,10 +1,14 @@
-import Navbar from "../navbar/Navbar.jsx";
+import { useEffect, useState } from 'react';
 
 const MainLayout = ({ children }) => {
+
   return (
     <>
-      <Navbar />
-      <main className="pt-16">{children}</main> {/* Ajusta el padding para evitar que el contenido quede oculto */}
+      <div className="relative overflow-hidden h-screen">
+        <main>
+          {children}
+        </main>
+      </div>
     </>
   );
 };
