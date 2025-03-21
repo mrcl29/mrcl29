@@ -1,10 +1,20 @@
-const NavCard = ({ title, route="home", onPageChange }) => {
+const NavCard = ({ title, route, isChecked, onPageChange }) => {
   return (
-    <div className="group relative hover:scale-110 transition-all duration-300">
-      <div className="text-black font-bold group-hover:text-black-700 text-base md:text-lg lg:text-xl">
-        <button onClick={() => onPageChange(route)}><a>{title}</a></button>
-      </div>
-      <span className="absolute left-0 bottom-0 w-full h-0.5 bg-black scale-x-0 group-hover:scale-x-100 transition-transform duration-400"></span>
+    <div
+      onClick={() => onPageChange(route)}
+      className={`cursor-pointer w-full h-full flex items-center justify-center rounded-full transition-all duration-300 ${
+        isChecked ? "text-white" : "hover:bg-gray-200"
+      }`}
+    >
+      <input id={route} type="radio" checked={isChecked} onChange={() => onPageChange(route)} className="hidden" />
+      <label
+        htmlFor={route}
+        className={`cursor-pointer font-bold transition-transform duration-300 select-none ${
+          isChecked ? "scale-110" : "scale-100"
+        }`}
+      >
+        {title}
+      </label>
     </div>
   );
 };
