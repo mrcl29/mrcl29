@@ -7,7 +7,8 @@ const Navbar = ({ currentPage, onPageChange }) => {
 
   const updateIndicator = () => {
     if (navRefs.current[currentPage] && indicatorRef.current) {
-      const { offsetLeft, offsetWidth, offsetHeight } = navRefs.current[currentPage];
+      const { offsetLeft, offsetWidth, offsetHeight } =
+        navRefs.current[currentPage];
       indicatorRef.current.style.left = `${offsetLeft}px`;
       indicatorRef.current.style.width = `${offsetWidth}px`;
       indicatorRef.current.style.height = `${offsetHeight}px`;
@@ -23,7 +24,10 @@ const Navbar = ({ currentPage, onPageChange }) => {
   return (
     <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 border-2 border-black z-50 inline-flex items-center justify-center rounded-full">
       {/* Indicador deslizante */}
-      <div ref={indicatorRef} className="absolute bg-black rounded-full transition-all duration-300 ease-in-out"></div>
+      <div
+        ref={indicatorRef}
+        className="absolute bg-black rounded-full transition-all duration-300 ease-in-out"
+      ></div>
 
       <ul className="flex w-full relative">
         {["home", "projects", "about", "contact"].map((route) => (

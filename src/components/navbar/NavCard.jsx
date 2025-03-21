@@ -6,7 +6,13 @@ const NavCard = ({ title, route, isChecked, onPageChange }) => {
         isChecked ? "text-white" : "hover:bg-gray-200"
       }`}
     >
-      <input id={route} type="radio" checked={isChecked} onChange={() => onPageChange(route)} className="hidden" />
+      <input
+        id={route}
+        type="radio"
+        checked={isChecked}
+        onChange={() => onPageChange(route)}
+        className="hidden"
+      />
       <label
         htmlFor={route}
         className={`cursor-pointer font-bold transition-transform duration-300 select-none ${
