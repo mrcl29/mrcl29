@@ -22,7 +22,7 @@ const Navbar = ({ currentPage, onPageChange }) => {
   }, [currentPage]);
 
   return (
-    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 border-2 border-black z-50 inline-flex items-center justify-center rounded-full">
+    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 border-3 border-black z-50 inline-flex items-center justify-center rounded-full">
       {/* Indicador deslizante */}
       <div
         ref={indicatorRef}

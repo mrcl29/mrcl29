@@ -15,8 +15,8 @@ const NavCard = ({ title, route, isChecked, onPageChange }) => {
       />
       <label
         htmlFor={route}
-        className={`cursor-pointer font-bold transition-transform duration-300 select-none ${
-          isChecked ? "scale-110" : "scale-100"
+        className={`cursor-pointer font-extrabold transition-transform duration-300 select-none ${
+          isChecked ? "scale-120" : "scale-100"
         }`}
       >
         {title}

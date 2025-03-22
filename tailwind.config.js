@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Roboto', 'sans-serif'], // Cambia 'Roboto' por la fuente que elijas
+        sans: ['League Spartan', 'Arial', 'sans-serif'],
       },
     },
   },
