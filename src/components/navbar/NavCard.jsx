@@ -3,7 +3,7 @@ const NavCard = ({ title, route, isChecked, onPageChange }) => {
     <div
       onClick={() => onPageChange(route)}
       className={`cursor-pointer w-full h-full flex items-center justify-center rounded-full transition-all duration-300 ${
-        isChecked ? "text-white" : "hover:bg-gray-200"
+        isChecked ? "text-black" : "hover:scale-120"
       }`}
     >
       <input

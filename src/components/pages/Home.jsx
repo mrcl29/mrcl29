@@ -14,8 +14,8 @@ const Home = () => {
       </div>
 
       {/* Contenedor derecho - Ocupa la otra mitad y su altura se ajusta a los otros contenedores */}
-      <div className="w-1/2 h-full p-4 bg-gray-200">
-        {/* Contenido del contenedor derecho */}3
+      <div className="w-1/2 h-full p-4">
+        3
       </div>
 
       {/* Contenedor de texto - Mitad izquierda, ajustada verticalmente al contenido */}
