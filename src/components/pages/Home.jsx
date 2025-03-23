@@ -1,4 +1,5 @@
 import fotoCV from "../../assets/foto_CV.avif";
+import ToolList from "../tools/ToolList";
 
 const Home = () => {
   return (
@@ -15,7 +16,7 @@ const Home = () => {
 
       {/* Contenedor derecho - Ocupa la otra mitad y su altura se ajusta a los otros contenedores */}
       <div className="w-1/2 h-full p-4">
-        3
+        <ToolList/>
       </div>
 
       {/* Contenedor de texto - Mitad izquierda, ajustada verticalmente al contenido */}

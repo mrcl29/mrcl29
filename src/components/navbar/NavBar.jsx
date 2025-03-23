@@ -1,7 +1,33 @@
 import { useEffect, useRef } from "react";
-import NavCard from "./NavCard";
 
-const Navbar = ({ currentPage, onPageChange }) => {
+const NavCard = ({ title, route, isChecked, onPageChange }) => {
+  return (
+    <div
+      onClick={() => onPageChange(route)}
+      className={`cursor-pointer w-full h-full flex items-center justify-center rounded-full transition-all duration-300 ${
+        isChecked ? "text-black" : "hover:scale-120"
+      }`}
+    >
+      <input
+        id={route}
+        type="radio"
+        checked={isChecked}
+        onChange={() => onPageChange(route)}
+        className="hidden"
+      />
+      <label
+        htmlFor={route}
+        className={`cursor-pointer font-extrabold transition-transform duration-300 select-none ${
+          isChecked ? "scale-120" : "scale-100"
+        }`}
+      >
+        {title}
+      </label>
+    </div>
+  );
+};
+
+const NavBar = ({ currentPage, onPageChange }) => {
   const indicatorRef = useRef(null);
   const navRefs = useRef({});
 
@@ -49,4 +75,4 @@ const Navbar = ({ currentPage, onPageChange }) => {
   );
 };
 
-export default Navbar;
+export default NavBar;
