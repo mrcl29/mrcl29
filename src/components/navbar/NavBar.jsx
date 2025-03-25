@@ -1,24 +1,24 @@
 import { useEffect, useRef } from "react";
 
-const NavCard = ({ title, route, isChecked, onPageChange }) => {
+const NavCard = ({ title, route, isChecked, setCurrentPage }) => {
   return (
     <div
-      onClick={() => onPageChange(route)}
+      onClick={() => setCurrentPage(route)}
       className={`cursor-pointer w-full h-full flex items-center justify-center rounded-full transition-all duration-300 ${
-        isChecked ? "text-black" : "hover:scale-120"
+        isChecked ? "text-black" : "hover:scale-110"
       }`}
     >
       <input
         id={route}
         type="radio"
         checked={isChecked}
-        onChange={() => onPageChange(route)}
+        onChange={() => setCurrentPage(route)}
         className="hidden"
       />
       <label
         htmlFor={route}
         className={`cursor-pointer font-extrabold transition-transform duration-300 select-none ${
-          isChecked ? "scale-120" : "scale-100"
+          isChecked ? "scale-110" : "scale-100"
         }`}
       >
         {title}
@@ -27,7 +27,7 @@ const NavCard = ({ title, route, isChecked, onPageChange }) => {
   );
 };
 
-const NavBar = ({ currentPage, onPageChange }) => {
+const NavBar = ({ currentPage, setCurrentPage }) => {
   const indicatorRef = useRef(null);
   const navRefs = useRef({});
 
@@ -48,7 +48,7 @@ const NavBar = ({ currentPage, onPageChange }) => {
   }, [currentPage]);
 
   return (
-    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 border-3 border-white z-50 inline-flex items-center justify-center rounded-full">
+    <nav className="transform border-3 border-white z-50 items-center justify-center rounded-full sm:block hidden">
       {/* Indicador deslizante */}
       <div
         ref={indicatorRef}
@@ -60,13 +60,13 @@ const NavBar = ({ currentPage, onPageChange }) => {
           <li
             key={route}
             ref={(el) => (navRefs.current[route] = el)}
-            className="flex-1 min-w-[100px] h-[40px] sm:min-w-[120px] sm:h-[45px] md:min-w-[140px] md:h-[50px] lg:min-w-[160px] lg:h-[55px] flex items-center justify-center"
+            className="flex-1 min-w-[60px] h-[25px] sm:min-w-[70px] sm:h-[30px] md:min-w-[90px] md:h-[35px] lg:min-w-[110px] lg:h-[40px] flex items-center justify-center"
           >
             <NavCard
               title={route.charAt(0).toUpperCase() + route.slice(1)}
               route={route}
               isChecked={currentPage === route}
-              onPageChange={onPageChange} // Actualiza el estado global
+              setCurrentPage={setCurrentPage}
             />
           </li>
         ))}

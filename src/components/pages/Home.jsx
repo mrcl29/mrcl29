@@ -1,18 +1,10 @@
-import fotoCV from "../../assets/foto_CV.avif";
 import ToolList from "../tools/ToolList";
 
 const Home = () => {
   return (
     <div className="flex flex-wrap mt-16 sm:mt-16 md:mt-20 lg:mt-24">
       {/* Contenedor de la imagen - Mitad izquierda, ajustada verticalmente */}
-      <div className="flex justify-center items-center w-1/2 h-auto mb-5 mt-5">
-        <img
-          src={fotoCV}
-          loading="eager"
-          alt="Fotografia de Marc Llobera Villalonga en formato CV."
-          className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full"
-        />
-      </div>
+      
 
       {/* Contenedor derecho - Ocupa la otra mitad y su altura se ajusta a los otros contenedores */}
       <div className="w-1/2 h-full p-4">

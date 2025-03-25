@@ -12,8 +12,8 @@ function ParticleBackground() {
 
   const options = useMemo(() => ({
     fpsLimit: 120, // Límite de FPS para optimizar rendimiento
-    background: {
-      color: "#000", // Color de fondo negro
+    baskground:{
+color: "#000000"
     },
     interactivity: {
       events: {
@@ -111,8 +111,18 @@ function ParticleBackground() {
     },
   }));
 
+  // Estilos CSS para asegurar que las partículas se carguen en el fondo
+  const particlesStyle = {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    zIndex: -1, // Asegura que las partículas estén detrás de otros elementos
+  };
+
   // Devuelve el componente Particles con las opciones configuradas
-  return <Particles id="tsparticles" options={options} />;
+  return <Particles id="tsparticles" options={options} style={particlesStyle} />;
 }
 
 export default ParticleBackground;
