@@ -12,50 +12,52 @@ function ParticleBackground() {
 
   const options = useMemo(() => ({
     fpsLimit: 120, // Límite de FPS para optimizar rendimiento
-    baskground:{
-color: "#000000"
+    baskground: {
+      color: "#000000",
     },
     interactivity: {
       events: {
         onHover: {
           enable: true, // Activa la interacción con el mouse
           mode: "grab", // Las partículas se conectan entre sí cuando el cursor pasa cerca
-          parallax: { 
+          parallax: {
             enable: true, // Activa el efecto de parallax
-            force: 45, // Fuerza del efecto parallax (cuánto se mueven las partículas al pasar el ratón)
-            smooth: 50, // Suaviza el movimiento del parallax
+            force: 40, // Fuerza del efecto parallax (cuánto se mueven las partículas al pasar el ratón)
+            smooth: 70, // Suaviza el movimiento del parallax
           },
         },
         resize: {
           delay: 0.5, // Retraso en la actualización al cambiar el tamaño de la ventana
           enable: true, // Habilita el ajuste dinámico de partículas al cambiar el tamaño
-        }
+        },
       },
       modes: {
         grab: {
-            distance: 100, // Distancia en la que las partículas se conectan al pasar el cursor cerca
-            lineLinked: {
-              enable: true, // Habilita las líneas de conexión entre las partículas
-              opacity: 0.3, // Opacidad de las líneas de conexión
-              color: "#ffffff", // Color de las líneas de conexión (blanco)
-              width: 1, // Grosor de las líneas de conexión
-            },
+          distance: 100, // Distancia en la que las partículas se conectan al pasar el cursor cerca
+          lineLinked: {
+            enable: true, // Habilita las líneas de conexión entre las partículas
+            opacity: 0.3, // Opacidad de las líneas de conexión
+            color: "#ffffff", // Color de las líneas de conexión (blanco)
+            width: 1, // Grosor de las líneas de conexión
           },
         },
-        connect: {
-          distance: 90, // Distancia a la que las partículas se conectan entre ellas
-          links: {
-            opacity: 0.4, // Opacidad de las líneas de conexión entre partículas
-          },
-          radius: 60, // Radio en el que las partículas se conectan entre sí
+      },
+      connect: {
+        distance: 90, // Distancia a la que las partículas se conectan entre ellas
+        links: {
+          opacity: 0.4, // Opacidad de las líneas de conexión entre partículas
         },
+        radius: 60, // Radio en el que las partículas se conectan entre sí
+      },
     },
     particles: {
       color: { value: "#ffffff" }, // Color de las partículas (blanco)
       move: {
         direction: "none", // Sin dirección fija para el movimiento de las partículas
         enable: true, // Habilita el movimiento de las partículas
-        outModes: "out", // Si las partículas salen del área visible, se reposicionan
+        outModes: {
+          default: "bounce", // Hace que las partículas reboten en lugar de desaparecer al llegar al borde
+        },
         random: true, // Movimiento aleatorio de las partículas
         speed: 1, // Velocidad del movimiento de las partículas
         straight: false, // Las partículas no se mueven en línea recta
@@ -87,12 +89,12 @@ color: "#000000"
       links: {
         blink: false, // Desactiva el parpadeo de las líneas de conexión
         color: {
-          "value": "#ffffff", // Color de las líneas de conexión
+          value: "#ffffff", // Color de las líneas de conexión
         },
         consent: false, // No se requiere consentimiento para mostrar las líneas de conexión
         distance: 100, // Distancia a la que las partículas se conectan entre ellas
         enable: true, // Habilita las líneas de conexión entre las partículas
-        frequency: 1, // Frecuencia con la que se generan las conexiones
+        frequency: 0.8, // Frecuencia con la que se generan las conexiones
         opacity: 0.2, // Opacidad de las líneas de conexión
         shadow: {
           blur: 5, // Desenfoque de las sombras de las líneas de conexión
@@ -122,7 +124,9 @@ color: "#000000"
   };
 
   // Devuelve el componente Particles con las opciones configuradas
-  return <Particles id="tsparticles" options={options} style={particlesStyle} />;
+  return (
+    <Particles id="tsparticles" options={options} style={particlesStyle} />
+  );
 }
 
 export default ParticleBackground;

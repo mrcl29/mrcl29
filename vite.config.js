@@ -8,4 +8,10 @@ export default defineConfig({
   server: {
     port: 3000 // Aquí cambias el puerto al que prefieras
   },
+  resolve: {
+    alias: {
+      // Configura los alias
+      '@': '/src',
+    },
+  },
 })

@@ -1,33 +1,7 @@
 import { useEffect, useRef } from "react";
+import NavCard from "./NavCard";
 
-const NavCard = ({ title, route, isChecked, setCurrentPage }) => {
-  return (
-    <div
-      onClick={() => setCurrentPage(route)}
-      className={`cursor-pointer w-full h-full flex items-center justify-center rounded-full transition-all duration-300 ${
-        isChecked ? "text-black" : "hover:scale-110"
-      }`}
-    >
-      <input
-        id={route}
-        type="radio"
-        checked={isChecked}
-        onChange={() => setCurrentPage(route)}
-        className="hidden"
-      />
-      <label
-        htmlFor={route}
-        className={`cursor-pointer font-extrabold transition-transform duration-300 select-none ${
-          isChecked ? "scale-110" : "scale-100"
-        }`}
-      >
-        {title}
-      </label>
-    </div>
-  );
-};
-
-const NavBar = ({ currentPage, setCurrentPage }) => {
+const NavBar = ({ currentPage, setCurrentPage, scrollToSection }) => {
   const indicatorRef = useRef(null);
   const navRefs = useRef({});
 
@@ -48,11 +22,11 @@ const NavBar = ({ currentPage, setCurrentPage }) => {
   }, [currentPage]);
 
   return (
-    <nav className="transform border-3 border-white z-50 items-center justify-center rounded-full sm:block hidden">
+    <nav className="transform z-50 items-center justify-center rounded-full sm:block hidden">
       {/* Indicador deslizante */}
       <div
         ref={indicatorRef}
-        className="absolute bg-white rounded-full transition-all duration-300 ease-in-out"
+        className="absolute bg-gray-200 rounded-full transition-all duration-400 ease-in-out"
       ></div>
 
       <ul className="flex w-full relative">
@@ -67,6 +41,7 @@ const NavBar = ({ currentPage, setCurrentPage }) => {
               route={route}
               isChecked={currentPage === route}
               setCurrentPage={setCurrentPage}
+              scrollToSection={scrollToSection} // Pasa la función scrollToSection aquí
             />
           </li>
         ))}
