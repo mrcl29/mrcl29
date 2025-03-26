@@ -28,13 +28,13 @@
 
 <hr style="border: 2px solid white;">
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=mrcl29&show_icons=true&locale=en&layout=compact&theme=dark" alt="mrcl29" /></p>
+<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=mrcl29&show_icons=true&locale=en&layout=compact&theme=dracula" alt="mrcl29" /></p>
 
-<p><img align="center" src="https://github-readme-stats.vercel.app/api?username=mrcl29&show_icons=true&locale=en&theme=dark" alt="mrcl29" /></p>
+<p><img align="center" src="https://github-readme-stats.vercel.app/api?username=mrcl29&show_icons=true&locale=en&theme=dracula" alt="mrcl29" /></p>
 
 
 <hr style="border: 2px solid white;">
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=mrcl29&theme=dark" alt="mrcl29" /></a> </p>
+<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=mrcl29&theme=dracula" alt="mrcl29" /></a> </p>
 
 
