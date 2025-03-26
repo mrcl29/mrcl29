@@ -2,7 +2,7 @@ import ToolList from "../tools/ToolList";
 
 const Home = () => {
   return (
-    <div className="flex flex-wrap mt-16 sm:mt-16 md:mt-20 lg:mt-24">
+    <div className="flex flex-wrap">
       {/* Contenedor de la imagen - Mitad izquierda, ajustada verticalmente */}
       
 

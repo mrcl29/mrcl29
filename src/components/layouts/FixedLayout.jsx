@@ -6,7 +6,7 @@ import ContactInfo from "@/components/contact/ContactInfo";
 const FixedLayout = ({ currentPage, setCurrentPage, scrollToSection }) => {
   return (
     <header className="w-[60%] h-full mx-auto flex flex-col justify-between pb-10">
-      <div className="fixed top-0 left-0 w-1/2 z-100 pt-2 pr-10 pl-10">
+      <div className="fixed justify-center items-center top-0 left-0 w-1/2 z-100 pt-2 px-10">
         <NavBar
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
@@ -57,7 +57,7 @@ const FixedLayout = ({ currentPage, setCurrentPage, scrollToSection }) => {
           </div>
         </div>
       </div>
-      <div className="fixed bottom-0 left-0 w-1/2 z-100 pb-2 pr-5 pl-10 flex space-x-4">
+      <div className="fixed justify-center items-center bottom-0 left-0 w-1/2 z-100 pb-2 px-10 flex sm:space-x-8 md:space-x-16 lg:space-x-24">
         {/* Recorriendo el diccionario CONTACT */}
         {Object.entries(CONTACT).map(([key, { url, image }]) => (
           <ContactInfo key={key} name={key} icon={image} url={url} />

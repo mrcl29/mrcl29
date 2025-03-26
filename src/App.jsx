@@ -74,9 +74,9 @@ function App() {
       </div>
 
       {/* Contenido principal (derecha) */}
-      <div className="h-full w-1/2 overflow-auto z-10">
+      <div className="h-full w-1/2 overflow-auto z-10 pt-10 pb-10">
         <MainLayout>
-          <div className="content-wrapper relative z-10 mt-16 sm:mt-16 md:mt-20 lg:mt-24 flex flex-col">
+          <div className="content-wrapper relative z-10 flex flex-col">
             {/* Sección Home */}
             <div ref={homeRef} id="home" className="section">
               <Home />
