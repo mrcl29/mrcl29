@@ -5,7 +5,7 @@ import FixedLayout from "@/components/layouts/FixedLayout.jsx";
 import MainLayout from "@/components/layouts/MainLayout.jsx";
 import Home from "@/components/pages/Home.jsx";
 import Projects from "@/components/pages/Projects.jsx";
-import About from "@/components/pages/About.jsx";
+import Experience from "@/components/pages/Experience.jsx";
 import Contact from "@/components/pages/Contact.jsx";
 
 function App() {
@@ -14,18 +14,18 @@ function App() {
   // Refs para las secciones de contenido
   const homeRef = useRef(null);
   const projectsRef = useRef(null);
-  const aboutRef = useRef(null);
+  const experienceRef = useRef(null);
   const contactRef = useRef(null);
 
   const sectionRefs = {
     home: homeRef,
     projects: projectsRef,
-    about: aboutRef,
+    experience: experienceRef,
     contact: contactRef,
   };
 
   const scrollToSection = (section) => {
-    sectionRefs[section].current.scrollIntoView({ behavior: "smooth" });
+    sectionRefs[section].current.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   // Función para observar cuando una sección está en vista
@@ -74,7 +74,7 @@ function App() {
       </div>
 
       {/* Contenido principal (derecha) */}
-      <div className="h-full w-1/2 overflow-auto z-10 pt-10 pb-10">
+      <div className="h-full w-1/2 overflow-auto z-10">
         <MainLayout>
           <div className="content-wrapper relative z-10 flex flex-col">
             {/* Sección Home */}
@@ -87,9 +87,9 @@ function App() {
               <Projects />
             </div>
 
-            {/* Sección About */}
-            <div ref={aboutRef} id="about" className="section">
-              <About />
+            {/* Sección Experiencia */}
+            <div ref={experienceRef} id="experience" className="section">
+              <Experience />
             </div>
 
             {/* Sección Contact */}

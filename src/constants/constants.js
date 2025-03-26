@@ -30,6 +30,7 @@ export const CONTACT = {
 import javaImage from "@/assets/tools/java.svg";
 import pythonImage from "@/assets/tools/python.svg";
 import javascriptImage from "@/assets/tools/javascript.svg";
+import rustImage from "@/assets/tools/rust.svg";
 import golangImage from "@/assets/tools/golang.svg";
 import phpImage from "@/assets/tools/php.svg";
 import cImage from "@/assets/tools/c.svg";
@@ -54,110 +55,115 @@ export const TOOLS = {
     Java: {
       url: "https://java.com",
       image: javaImage,
-      stars: 3,
+      points: 3,
     },
     Python: {
       url: "https://python.org",
       image: pythonImage,
-      stars: 3,
+      points: 3,
     },
     JavaScript: {
       url: "https://en.wikipedia.org/wiki/JavaScript",
       image: javascriptImage,
-      stars: 2,
+      points: 2,
+    },
+    Rust: {
+      url: "https://www.rust-lang.org/",
+      image: rustImage,
+      points: 1,
     },
     Go: {
       url: "https://go.dev/",
       image: golangImage,
-      stars: 1,
+      points: 1,
     },
     PHP: {
       url: "https://www.php.net/",
       image: phpImage,
-      stars: 1,
+      points: 1,
     },
     C: {
       url: "https://en.wikipedia.org/wiki/C_(programming_language)",
       image: cImage,
-      stars: 1,
+      points: 1,
     },
   },
   Frameworks: {
     React: {
       url: "https://react.dev/",
       image: reactImage,
-      stars: 2,
+      points: 2,
     },
     Tailwind: {
       url: "https://tailwindcss.com/",
       image: tailwindImage,
-      stars: 2,
+      points: 2,
     },
     Jinja: {
       url: "https://jinja.palletsprojects.com/en/stable/",
       image: jinjaImage,
-      stars: 2,
+      points: 2,
     },
     Flask: {
       url: "https://flask.palletsprojects.com/en/stable/",
       image: flaskImage,
-      stars: 1,
+      points: 1,
     },
   },
   "Bases de Datos": {
     MariaDB: {
       url: "https://mariadb.org/",
       image: mariadbImage,
-      stars: 3,
+      points: 3,
     },
     MySQL: {
       url: "https://www.mysql.com/",
       image: mysqlImage,
-      stars: 3,
+      points: 3,
     },
     Postgre: {
       url: "https://www.postgresql.org/",
       image: postgresqlImage,
-      stars: 2,
+      points: 2,
     },
     MongoDB: {
       url: "https://www.mongodb.com/",
       image: mongodbImage,
-      stars: 1,
+      points: 1,
     },
   },
   Herramientas: {
     Git: {
       url: "https://git-scm.com/",
       image: gitImage,
-      stars: 3,
+      points: 3,
     },
     Grafana: {
       url: "https://grafana.com/",
       image: grafanaImage,
-      stars: 2,
+      points: 2,
     },
     Docker: {
       url: "https://www.docker.com/",
       image: dockerImage,
-      stars: 1,
+      points: 1,
     },
   },
   Extra: {
     HTML: {
       url: "https://en.wikipedia.org/wiki/HTML",
       image: htmlImage,
-      stars: 3,
+      points: 3,
     },
     CSS: {
       url: "https://en.wikipedia.org/wiki/CSS",
       image: cssImage,
-      stars: 2,
+      points: 2,
     },
     Linux: {
       url: "https://en.wikipedia.org/wiki/Linux",
       image: linuxImage,
-      stars: 2,
+      points: 2,
     },
   },
 };

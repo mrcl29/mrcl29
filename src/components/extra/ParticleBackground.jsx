@@ -65,9 +65,9 @@ function ParticleBackground() {
       number: {
         density: {
           enable: true, // Habilita la distribución uniforme de partículas
-          area: 100, // Cantidad de partículas por área (por cada 100px²)
+          area: 50, // Cantidad de partículas por área (por cada 100px²)
         },
-        value: 350, // Número total de partículas en la pantalla
+        value: 400, // Número total de partículas en la pantalla
       },
       opacity: {
         animation: {

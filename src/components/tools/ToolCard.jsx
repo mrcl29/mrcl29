@@ -1,20 +1,20 @@
 import React from "react";
 
 // Componente ToolCard: Muestra una herramienta individual
-function ToolCard({ name, url, image, stars }) {
+function ToolCard({ name, url, image, points }) {
   // Función para generar los círculos
-  const renderCircles = (stars) => {
+  const renderCircles = (points) => {
     const circles = [0, 0, 0]; // Tres círculos fijos
-    for (let i = 0; i < stars; i++) {
+    for (let i = 0; i < points; i++) {
       circles[i] = 1; // Rellenamos los círculos según las estrellas
     }
     return circles.map((circle, index) => (
       <span
         key={index}
-        className={`${circle === 1 ? "text-black" : "text-gray-600"} text-xl`} // Ajustamos el tamaño de los círculos
-      >
-        {circle === 1 ? "●" : "○"} {/* Círculo lleno o vacío */}
-      </span>
+        className={`${
+          circle === 1 ? "bg-black" : "border-2 border-gray-500"
+        } w-2.5 h-2.5 rounded-full flex items-center justify-center`} // Círculos ajustados
+      />
     ));
   };
 
@@ -25,7 +25,10 @@ function ToolCard({ name, url, image, stars }) {
       rel="noopener noreferrer"
       className="flex flex-col items-center justify-center w-full h-full"
     >
-      <div className="flex flex-col items-center justify-center bg-gray-300 text-black rounded-lg shadow-md w-full h-full"> {/* Contenedor más pequeño */}
+      <div
+        className="flex flex-col items-center justify-center bg-gray-50 text-black rounded-lg shadow-md w-full h-full 
+                   transition-transform duration-400 transform hover:scale-150 hover:shadow-xl hover:z-100 border-3 border-black"
+      > {/* Contenedor con animación en hover */}
         
         {/* Imagen con tamaño reducido */}
         <img
@@ -40,8 +43,8 @@ function ToolCard({ name, url, image, stars }) {
         </div>
         
         {/* Círculos ajustados al tamaño del contenedor */}
-        <div className="flex space-x-1 justify-center w-full pb-1">
-          {renderCircles(stars)} {/* Mostrar círculos */}
+        <div className="flex gap-x-1 justify-center w-full py-2">
+          {renderCircles(points)} {/* Mostrar círculos */}
         </div>
       </div>
     </a>
