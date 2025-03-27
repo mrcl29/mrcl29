@@ -79,9 +79,8 @@ function App() {
   {/* Contenido principal (derecha) con scroll-smooth */}
   <div className="h-full w-1/2 overflow-auto z-10 scroll-smooth">
     <MainLayout>
-      <div className="content-wrapper relative z-10 flex flex-col">
         {/* Sección Home */}
-        <div ref={homeRef} id="home" className="section">
+        <div ref={homeRef} id="home" className="section h-screen">
           <Home />
         </div>
 
@@ -99,7 +98,6 @@ function App() {
         <div ref={contactRef} id="contact" className="section">
           <Contact />
         </div>
-      </div>
     </MainLayout>
   </div>
 

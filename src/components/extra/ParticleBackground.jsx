@@ -59,15 +59,15 @@ function ParticleBackground() {
           default: "bounce", // Hace que las partículas reboten en lugar de desaparecer al llegar al borde
         },
         random: true, // Movimiento aleatorio de las partículas
-        speed: 1, // Velocidad del movimiento de las partículas
+        speed: 0.5, // Velocidad del movimiento de las partículas
         straight: false, // Las partículas no se mueven en línea recta
       },
       number: {
         density: {
           enable: true, // Habilita la distribución uniforme de partículas
-          area: 50, // Cantidad de partículas por área (por cada 100px²)
+          area: 20, // Cantidad de partículas por área (por cada 100px²)
         },
-        value: 400, // Número total de partículas en la pantalla
+        value: 300, // Número total de partículas en la pantalla
       },
       opacity: {
         animation: {

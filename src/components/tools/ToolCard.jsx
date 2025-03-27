@@ -13,7 +13,7 @@ function ToolCard({ name, url, image, points }) {
         key={index}
         className={`${
           circle === 1 ? "bg-black" : "border-2 border-gray-500"
-        } w-2.5 h-2.5 rounded-full flex items-center justify-center`} // Círculos ajustados
+        } w-2 h-2 rounded-full flex items-center justify-center`} // Círculos ajustados
       />
     ));
   };
@@ -26,7 +26,7 @@ function ToolCard({ name, url, image, points }) {
       className="flex flex-col items-center justify-center w-full h-full"
     >
       <div
-        className="flex flex-col items-center justify-center bg-gray-50 text-black rounded-lg shadow-md w-full h-full 
+        className="flex flex-col items-center justify-center bg-white text-black rounded-lg shadow-md w-full h-full 
                    transition-transform duration-400 transform hover:scale-150 hover:shadow-xl hover:z-100 border-3 border-black"
       > {/* Contenedor con animación en hover */}
         

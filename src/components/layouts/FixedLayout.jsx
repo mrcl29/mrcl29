@@ -29,9 +29,7 @@ const FixedLayout = ({ currentPage, setCurrentPage, scrollToSection }) => {
         />
       </div>
       {/* Contenedor principal que se ocupa de la imagen y texto */}
-      <div
-        className="flex flex-col items-start justify-center flex-grow fade-left"
-      >
+      <div className="flex flex-col items-start justify-center flex-grow fade-left">
         {/* Contenedor de la imagen y el texto alineado a la izquierda */}
         <div className="flex flex-col items-start">
           {/* Imagen */}
@@ -46,8 +44,9 @@ const FixedLayout = ({ currentPage, setCurrentPage, scrollToSection }) => {
               onMouseEnter={handleMouseEnter} // Aplicar el evento onMouseEnter
               onMouseLeave={handleMouseLeave} // Aplicar el evento onMouseLeave
               className={`transition-transform duration-1000 ${
-                isHovered ? "hover:scale-110 z-1000 fixed" : "scale-100"
-              }`} // Aplicar la escala con animación
+                isHovered ? "scale-110 z-1000 fixed" : "scale-100"
+              } sm:scale-50 md:scale-70 lg:scale-90 xl:scale-110 sm:block hidden`} // Escala responsiva según el tamaño de la pantalla
+              style={{ width: "fit-content", height: "fit-content" }} // Asegura que el contenedor sea de tamaño adecuado
             >
               {icon} {/* Renderiza el icono dinámico */}
             </div>
@@ -63,7 +62,7 @@ const FixedLayout = ({ currentPage, setCurrentPage, scrollToSection }) => {
           </div>
         </div>
       </div>
-      <div className="fixed justify-center items-center bottom-0 left-0 w-1/2 z-100 pb-2 px-10 flex sm:space-x-8 md:space-x-16 lg:space-x-24 fade-left">
+      <div className="fixed justify-center items-center bottom-0 left-0 w-1/2 z-100 pb-2 px-10 flex sm:space-x-4 md:space-x-8 lg:space-x-16 fade-left">
         {/* Recorriendo el diccionario CONTACT */}
         {Object.entries(CONTACT).map(([key, { url, image }]) => (
           <ContactInfo key={key} name={key} icon={image} url={url} />
