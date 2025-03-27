@@ -20,7 +20,7 @@ const FixedLayout = ({ currentPage, setCurrentPage, scrollToSection }) => {
   };
 
   return (
-    <header className="w-[60%] h-full mx-auto flex flex-col justify-between pb-10">
+    <header className="w-[60%] h-full mx-auto flex flex-col justify-between pb-5">
       <div className="fixed justify-center items-center top-0 left-0 w-1/2 z-100 pt-2 px-10 fade-left">
         <NavBar
           currentPage={currentPage}
@@ -53,16 +53,16 @@ const FixedLayout = ({ currentPage, setCurrentPage, scrollToSection }) => {
           </div>
           {/* Título y subtítulo */}
           <div className="text-left">
-            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold mb-3">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-3">
               {NAME}
             </h1>
-            <h2 className="text-sm sm:text-xl md:text-2xl lg:text-3xl text-gray-400">
+            <h2 className="font-semibold text-sm sm:text-xl md:text-2xl lg:text-3xl text-gray-400">
               Full Stack Developer
             </h2>
           </div>
         </div>
       </div>
-      <div className="fixed justify-center items-center bottom-0 left-0 w-1/2 z-100 pb-2 px-10 flex sm:space-x-4 md:space-x-8 lg:space-x-16 fade-left">
+      <div className="relative justify-center items-center bottom-0 left-0 w-full z-100 flex md:space-x-20 sm:space-x-5 fade-left">
         {/* Recorriendo el diccionario CONTACT */}
         {Object.entries(CONTACT).map(([key, { url, image }]) => (
           <ContactInfo key={key} name={key} icon={image} url={url} />

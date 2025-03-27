@@ -25,7 +25,10 @@ function App() {
   };
 
   const scrollToSection = (section) => {
-    sectionRefs[section].current.scrollIntoView({ behavior: "smooth", block: "start" });
+    sectionRefs[section].current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   };
 
   // Función para observar cuando una sección está en vista
@@ -66,45 +69,44 @@ function App() {
 
   return (
     // App.js
-<div className="relative w-full h-screen overflow-auto flex">
-  {/* Contenido Fijo (izquierda) */}
-  <div className="h-full w-1/2 flex items-center justify-center z-20">
-    <FixedLayout
-      currentPage={currentPage}
-      setCurrentPage={setCurrentPage}
-      scrollToSection={scrollToSection}
-    />
-  </div>
+    <div className="relative w-full h-screen overflow-auto flex flex-col lg:flex-row">
+      {/* Contenido Fijo (izquierda) */}
+      <div className="h-full w-full lg:w-1/2 flex items-center justify-center z-20">
+        <FixedLayout
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          scrollToSection={scrollToSection}
+        />
+      </div>
 
-  {/* Contenido principal (derecha) con scroll-smooth */}
-  <div className="h-full w-1/2 overflow-auto z-10 scroll-smooth">
-    <MainLayout>
-        {/* Sección Home */}
-        <div ref={homeRef} id="home" className="section h-screen">
-          <Home />
-        </div>
+      {/* Contenido principal (derecha) con scroll-smooth */}
+      <div className="h-full w-full lg:w-1/2 overflow-auto z-10 scroll-smooth">
+        <MainLayout>
+          {/* Sección Home */}
+          <div ref={homeRef} id="home" className="section h-screen">
+            <Home />
+          </div>
 
-        {/* Sección Projects */}
-        <div ref={projectsRef} id="projects" className="section">
-          <Projects />
-        </div>
+          {/* Sección Projects */}
+          <div ref={projectsRef} id="projects" className="section">
+            <Projects />
+          </div>
 
-        {/* Sección Experiencia */}
-        <div ref={experienceRef} id="experience" className="section">
-          <Experience />
-        </div>
+          {/* Sección Experiencia */}
+          <div ref={experienceRef} id="experience" className="section">
+            <Experience />
+          </div>
 
-        {/* Sección Contact */}
-        <div ref={contactRef} id="contact" className="section">
-          <Contact />
-        </div>
-    </MainLayout>
-  </div>
+          {/* Sección Contact */}
+          <div ref={contactRef} id="contact" className="section">
+            <Contact />
+          </div>
+        </MainLayout>
+      </div>
 
-  {/* Componente de fondo de partículas */}
-  <ParticleBackground />
-</div>
-
+      {/* Componente de fondo de partículas */}
+      <ParticleBackground />
+    </div>
   );
 }
 

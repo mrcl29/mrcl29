@@ -22,7 +22,7 @@ const NavBar = ({ currentPage, setCurrentPage, scrollToSection }) => {
   }, [currentPage]);
 
   return (
-    <nav className="transform z-50 items-center justify-center rounded-full sm:block hidden px-25">
+    <nav className="transform z-50 items-center justify-center rounded-full lg:block hidden px-25">
       {/* Indicador deslizante */}
       <div
         ref={indicatorRef}
