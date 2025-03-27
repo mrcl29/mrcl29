@@ -3,6 +3,11 @@ export const NAME = "Marc Llobera Villalonga";
 import foto from "@/assets/foto_CV.avif";
 export const FOTO = foto;
 
+export const INFO = `Soy un estudiante de Ingeniería Informática con 22 años, actualmente cursando mis estudios en la Universidad de las Islas Baleares (UIB) en Mallorca. Mi formación abarca áreas clave como <b>Minería de Datos, Aprendizaje Automático y Desarrollo Web</b>.
+<br />
+<br />
+He adquirido una sólida experiencia en desarrollo <b>Full Stack</b> con habilidades en lenguajes y tecnologías populares como <b>React, SQL, Java y Python</b> entre otros. Mi enfoque se centra en crear soluciones completas y eficientes, desde el diseño de interfaces hasta la gestión de bases de datos y servidores.`;
+
 import instagram from "@/assets/contact/instagram.svg";
 import github from "@/assets/contact/github.svg";
 import email from "@/assets/contact/email.svg";

@@ -65,44 +65,48 @@ function App() {
   }, []);
 
   return (
-    <div className="relative w-full h-screen overflow-auto flex">
-      {/* Contenido Fijo (izquierda) */}
-      <div className="h-full w-1/2 flex items-center justify-center z-20">
-        <FixedLayout currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          scrollToSection={scrollToSection}  />
+    // App.js
+<div className="relative w-full h-screen overflow-auto flex">
+  {/* Contenido Fijo (izquierda) */}
+  <div className="h-full w-1/2 flex items-center justify-center z-20">
+    <FixedLayout
+      currentPage={currentPage}
+      setCurrentPage={setCurrentPage}
+      scrollToSection={scrollToSection}
+    />
+  </div>
+
+  {/* Contenido principal (derecha) con scroll-smooth */}
+  <div className="h-full w-1/2 overflow-auto z-10 scroll-smooth">
+    <MainLayout>
+      <div className="content-wrapper relative z-10 flex flex-col">
+        {/* Sección Home */}
+        <div ref={homeRef} id="home" className="section">
+          <Home />
+        </div>
+
+        {/* Sección Projects */}
+        <div ref={projectsRef} id="projects" className="section">
+          <Projects />
+        </div>
+
+        {/* Sección Experiencia */}
+        <div ref={experienceRef} id="experience" className="section">
+          <Experience />
+        </div>
+
+        {/* Sección Contact */}
+        <div ref={contactRef} id="contact" className="section">
+          <Contact />
+        </div>
       </div>
+    </MainLayout>
+  </div>
 
-      {/* Contenido principal (derecha) */}
-      <div className="h-full w-1/2 overflow-auto z-10">
-        <MainLayout>
-          <div className="content-wrapper relative z-10 flex flex-col">
-            {/* Sección Home */}
-            <div ref={homeRef} id="home" className="section">
-              <Home />
-            </div>
+  {/* Componente de fondo de partículas */}
+  <ParticleBackground />
+</div>
 
-            {/* Sección Projects */}
-            <div ref={projectsRef} id="projects" className="section">
-              <Projects />
-            </div>
-
-            {/* Sección Experiencia */}
-            <div ref={experienceRef} id="experience" className="section">
-              <Experience />
-            </div>
-
-            {/* Sección Contact */}
-            <div ref={contactRef} id="contact" className="section">
-              <Contact />
-            </div>
-          </div>
-        </MainLayout>
-      </div>
-
-      {/* Componente de fondo de partículas */}
-      <ParticleBackground />
-    </div>
   );
 }
 
