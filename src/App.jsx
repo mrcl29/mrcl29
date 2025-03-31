@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import "@/App.css";
 import ParticleBackground from "@/components/extra/ParticleBackground.jsx";
 import FixedLayout from "@/components/layouts/FixedLayout.jsx";
@@ -17,14 +17,14 @@ function App() {
   const experienceRef = useRef(null);
   const contactRef = useRef(null);
 
-  const sectionRefs = {
+  const sectionRefs =  {
     home: homeRef,
     projects: projectsRef,
     experience: experienceRef,
     contact: contactRef,
   };
 
-  const scrollToSection = (section) => {
+  const scrollToSection =  (section) => {
     sectionRefs[section].current.scrollIntoView({
       behavior: "smooth",
       block: "start",

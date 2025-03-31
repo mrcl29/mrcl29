@@ -8,26 +8,35 @@ export const INFO = `Soy un estudiante de Ingeniería Informática de 22 años, 
 <br />
 He adquirido una sólida experiencia en desarrollo <b>Full Stack</b> con habilidades en lenguajes y tecnologías populares como <b>React, SQL, Java y Python</b> entre otros. Mi enfoque se centra en crear soluciones completas y eficientes, desde el diseño de interfaces hasta la gestión de bases de datos y servidores.`;
 
-import instagram from "@/assets/contact/instagram.svg";
+// import instagram from "@/assets/contact/instagram.svg";
 import github from "@/assets/contact/github.svg";
 import email from "@/assets/contact/email.svg";
 import linkedin from "@/assets/contact/linkedin.svg";
+import cv from "@/assets/contact/cv.svg";
 export const CONTACT = {
-  Instagram: {
-    url: "https://www.instagram.com/llobera29/",
-    image: instagram,
+  // Instagram: {
+  //   url: "https://www.instagram.com/llobera29/",
+  //   image: instagram,
+  // },
+  LinkedIn: {
+    user: "LinkedIn",
+    url: "https://www.linkedin.com/in/marc-llobera-villalonga/",
+    image: linkedin,
   },
   GitHub: {
+    user: "mrcl29",
     url: "https://github.com/mrcl29",
     image: github,
   },
   Email: {
+    user: "m.llobera@outlook.com",
     url: "mailto:m.llobera@outlook.com",
     image: email,
   },
-  LinkedIn: {
-    url: "https://www.linkedin.com/in/marc-llobera-villalonga/",
-    image: linkedin,
+  CV: {
+    user: "CV",
+    url: "",
+    image: cv,
   },
 };
 
@@ -60,115 +69,115 @@ export const TOOLS = {
     Java: {
       url: "https://java.com",
       image: javaImage,
-      points: 3,
+      //points: 3,
     },
     Python: {
       url: "https://python.org",
       image: pythonImage,
-      points: 3,
+      //points: 3,
     },
     JavaScript: {
       url: "https://en.wikipedia.org/wiki/JavaScript",
       image: javascriptImage,
-      points: 2,
-    },
-    Rust: {
-      url: "https://www.rust-lang.org/",
-      image: rustImage,
-      points: 1,
+      //points: 2,
     },
     Go: {
       url: "https://go.dev/",
       image: golangImage,
-      points: 1,
-    },
-    PHP: {
-      url: "https://www.php.net/",
-      image: phpImage,
-      points: 1,
-    },
-    C: {
-      url: "https://en.wikipedia.org/wiki/C_(programming_language)",
-      image: cImage,
-      points: 1,
+      //points: 1,
     },
   },
-  Frameworks: {
+  Frontend: {
     React: {
       url: "https://react.dev/",
       image: reactImage,
-      points: 2,
+      //points: 2,
     },
     Tailwind: {
       url: "https://tailwindcss.com/",
       image: tailwindImage,
-      points: 2,
+      //points: 2,
+    },
+    HTML: {
+      url: "https://en.wikipedia.org/wiki/HTML",
+      image: htmlImage,
+      //points: 3,
+    },
+    CSS: {
+      url: "https://en.wikipedia.org/wiki/CSS",
+      image: cssImage,
+      //points: 2,
     },
     Jinja: {
       url: "https://jinja.palletsprojects.com/en/stable/",
       image: jinjaImage,
-      points: 2,
+      //points: 2,
     },
+  },
+  Backend: {
     Flask: {
       url: "https://flask.palletsprojects.com/en/stable/",
       image: flaskImage,
-      points: 1,
+      //points: 1,
     },
-  },
-  "Bases de Datos": {
     MariaDB: {
       url: "https://mariadb.org/",
       image: mariadbImage,
-      points: 3,
+      //points: 3,
     },
     MySQL: {
       url: "https://www.mysql.com/",
       image: mysqlImage,
-      points: 3,
+      //points: 3,
     },
     Postgre: {
       url: "https://www.postgresql.org/",
       image: postgresqlImage,
-      points: 2,
+      //points: 2,
     },
     MongoDB: {
       url: "https://www.mongodb.com/",
       image: mongodbImage,
-      points: 1,
+      //points: 1,
     },
   },
   Herramientas: {
     Git: {
       url: "https://git-scm.com/",
       image: gitImage,
-      points: 3,
+      //points: 3,
     },
     Grafana: {
       url: "https://grafana.com/",
       image: grafanaImage,
-      points: 2,
+      //points: 2,
     },
     Docker: {
       url: "https://www.docker.com/",
       image: dockerImage,
-      points: 1,
-    },
-  },
-  Extra: {
-    HTML: {
-      url: "https://en.wikipedia.org/wiki/HTML",
-      image: htmlImage,
-      points: 3,
-    },
-    CSS: {
-      url: "https://en.wikipedia.org/wiki/CSS",
-      image: cssImage,
-      points: 2,
+      //points: 1,
     },
     Linux: {
       url: "https://en.wikipedia.org/wiki/Linux",
       image: linuxImage,
-      points: 2,
+      //points: 2,
+    },
+  },
+  "Aprendiendo...": {
+    Rust: {
+      url: "https://www.rust-lang.org/",
+      image: rustImage,
+      //points: 1,
+    },
+    PHP: {
+      url: "https://www.php.net/",
+      image: phpImage,
+      //points: 1,
+    },
+    C: {
+      url: "https://en.wikipedia.org/wiki/C_(programming_language)",
+      image: cImage,
+      //points: 1,
     },
   },
 };

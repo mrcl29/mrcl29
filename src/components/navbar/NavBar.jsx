@@ -22,11 +22,11 @@ const NavBar = ({ currentPage, setCurrentPage, scrollToSection }) => {
   }, [currentPage]);
 
   return (
-    <nav className="transform z-50 items-center justify-center rounded-full lg:block hidden px-25">
+    <nav className="transform z-50 items-center justify-center rounded-full lg:block hidden px-15">
       {/* Indicador deslizante */}
       <div
         ref={indicatorRef}
-        className="absolute bg-gray-200 rounded-full transition-all duration-400 ease-in-out mx-25"
+        className="absolute bg-gray-200 rounded-full transition-all duration-400 ease-in-out mx-15"
       ></div>
 
       <ul className="flex w-full relative">

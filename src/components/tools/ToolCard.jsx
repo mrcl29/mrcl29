@@ -1,22 +1,22 @@
 import React from "react";
 
 // Componente ToolCard: Muestra una herramienta individual
-function ToolCard({ name, url, image, points }) {
+function ToolCard({ name, url, image }) {
   // Función para generar los círculos
-  const renderCircles = (points) => {
-    const circles = [0, 0, 0]; // Tres círculos fijos
-    for (let i = 0; i < points; i++) {
-      circles[i] = 1; // Rellenamos los círculos según las estrellas
-    }
-    return circles.map((circle, index) => (
-      <span
-        key={index}
-        className={`${
-          circle === 1 ? "bg-black" : "border-2 border-gray-500"
-        } w-2 h-2 rounded-full flex items-center justify-center`} // Círculos ajustados
-      />
-    ));
-  };
+  // const renderCircles = (points) => {
+  //   const circles = [0, 0, 0]; // Tres círculos fijos
+  //   for (let i = 0; i < points; i++) {
+  //     circles[i] = 1; // Rellenamos los círculos según las estrellas
+  //   }
+  //   return circles.map((circle, index) => (
+  //     <span
+  //       key={index}
+  //       className={`${
+  //         circle === 1 ? "bg-black" : "border-2 border-gray-500"
+  //       } w-2 h-2 rounded-full flex items-center justify-center`} // Círculos ajustados
+  //     />
+  //   ));
+  // };
 
   return (
     <a
@@ -26,15 +26,15 @@ function ToolCard({ name, url, image, points }) {
       className="flex flex-col items-center justify-center w-full h-full"
     >
       <div
-        className="flex flex-col items-center justify-center bg-white text-black rounded-lg shadow-md w-full h-full 
-                   transition-transform duration-400 transform hover:scale-150 hover:shadow-xl hover:z-100 border-3 border-black"
+        className="flex flex-col items-center justify-center bg-gray-200 text-black rounded-lg shadow-md w-full h-full 
+                   transition-transform duration-400 transform hover:scale-150 hover:shadow-xl hover:z-100 hover:bg-white border-3 border-black"
       > {/* Contenedor con animación en hover */}
         
         {/* Imagen con tamaño reducido */}
         <img
           src={image}
           alt={name}
-          className="w-[40%] h-[40%] m-2 object-contain" // Ajusta el tamaño de la imagen según la pantalla
+          className="w-[45%] h-[45%] m-2 object-contain" // Ajusta el tamaño de la imagen según la pantalla
         />
         
         {/* Nombre ajustable con tamaño relativo */}
@@ -43,9 +43,9 @@ function ToolCard({ name, url, image, points }) {
         </div>
         
         {/* Círculos ajustados al tamaño del contenedor */}
-        <div className="flex gap-x-1 justify-center w-full py-2">
+        {/* <div className="flex gap-x-1 justify-center w-full py-2">
           {renderCircles(points)} {/* Mostrar círculos */}
-        </div>
+        {/*</div> */}
       </div>
     </a>
   );

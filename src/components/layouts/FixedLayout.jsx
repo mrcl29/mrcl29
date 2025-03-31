@@ -20,7 +20,7 @@ const FixedLayout = ({ currentPage, setCurrentPage, scrollToSection }) => {
   };
 
   return (
-    <header className="w-[60%] h-full mx-auto flex flex-col justify-between pb-5">
+    <header className="w-[100%] h-full mx-auto flex flex-col justify-between pb-5">
       <div className="fixed justify-center items-center top-0 left-0 w-1/2 z-100 pt-2 px-10 fade-left">
         <NavBar
           currentPage={currentPage}
@@ -29,18 +29,18 @@ const FixedLayout = ({ currentPage, setCurrentPage, scrollToSection }) => {
         />
       </div>
       {/* Contenedor principal que se ocupa de la imagen y texto */}
-      <div className="flex flex-col items-start justify-center flex-grow fade-left">
+      <div className="flex flex-col items-center justify-center pl-[20%] flex-grow fade-left">
         {/* Contenedor de la imagen y el texto alineado a la izquierda */}
-        <div className="flex flex-col items-start">
+        <div className="flex flex-col">
           {/* Imagen */}
-          <div className="flex flex-row items-center space-x-6">
+          <div className="flex flex-row space-x-6">
             <img
               src={FOTO}
               loading="eager"
               alt="Fotografía de Marc Llobera Villalonga en formato CV."
               className="w-12 h-12 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-22 lg:h-22 rounded-full mb-3"
             />
-            <div
+            {/* <div
               onMouseEnter={handleMouseEnter} // Aplicar el evento onMouseEnter
               onMouseLeave={handleMouseLeave} // Aplicar el evento onMouseLeave
               className={`transition-transform duration-1000 ${
@@ -48,8 +48,8 @@ const FixedLayout = ({ currentPage, setCurrentPage, scrollToSection }) => {
               } sm:scale-50 md:scale-70 lg:scale-90 xl:scale-110 sm:block hidden`} // Escala responsiva según el tamaño de la pantalla
               style={{ width: "fit-content", height: "fit-content" }} // Asegura que el contenedor sea de tamaño adecuado
             >
-              {icon} {/* Renderiza el icono dinámico */}
-            </div>
+              {icon}
+            </div> */}
           </div>
           {/* Título y subtítulo */}
           <div className="text-left">
@@ -62,10 +62,16 @@ const FixedLayout = ({ currentPage, setCurrentPage, scrollToSection }) => {
           </div>
         </div>
       </div>
-      <div className="relative justify-center items-center bottom-0 left-0 w-full z-100 flex md:space-x-20 sm:space-x-5 fade-left">
+      <div className="relative w-full justify-center items-center bottom-0 left-0 z-100 flex flex-wrap md:space-x-20 sm:space-x-5 gap-10 fade-left">
         {/* Recorriendo el diccionario CONTACT */}
-        {Object.entries(CONTACT).map(([key, { url, image }]) => (
-          <ContactInfo key={key} name={key} icon={image} url={url} />
+        {Object.entries(CONTACT).map(([key, { user, url, image }]) => (
+          <ContactInfo
+            key={key}
+            user={user}
+            name={key}
+            icon={image}
+            url={url}
+          />
         ))}
       </div>
     </header>

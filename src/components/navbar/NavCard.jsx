@@ -29,7 +29,7 @@ const NavCard = ({
         htmlFor={route}
         className={`cursor-pointer font-extrabold transition-transform duration-300 select-none ${
           isChecked ? "scale-130" : "scale-100"
-        } text-xs`}
+        } text-sm`}
       >
         {title}
       </label>
