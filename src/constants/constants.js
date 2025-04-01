@@ -62,6 +62,7 @@ import dockerImage from "@/assets/tools/docker.svg";
 import htmlImage from "@/assets/tools/html.svg";
 import cssImage from "@/assets/tools/css.svg";
 import linuxImage from "@/assets/tools/linux.svg";
+import viteImage from "@/assets/tools/vite.svg";
 
 // Diccionario de herramientas con URL y las imágenes importadas
 export const TOOLS = {
@@ -181,3 +182,58 @@ export const TOOLS = {
     },
   },
 };
+
+// Importar las imágenes de todos los proyectos
+import portfolioImage from "@/assets/projects/portfolio.png";
+import dataMiningImage from "@/assets/projects/data_mining.png";
+import compiladorImage from "@/assets/projects/compilador.png";
+import jocdel7Image from "@/assets/projects/jocdel7.png";
+
+export const PROJECTS = {
+  Portfolio:
+  {
+    image: portfolioImage,
+    description:"Portfolio personal tomado como proyecto Frontend para practicar el uso de React y Tailwind, y además mejorar mis habiliades de diseño y buenas prácticas en la programación descriptiva.",
+    tools: [reactImage, tailwindImage, viteImage],
+    url: "https://github.com/mrcl29/Portfolio",
+  },
+  "Automatic-Grafana-Data-Report":
+  {
+    image: null,
+    description:"Script de Python para automatizar la creación de reportes personalizados en formato excel a partir de los datos recogidos en dashboards de Grafana.",
+    tools: [pythonImage, flaskImage, linuxImage],
+    url: "https://github.com/mrcl29/Automatic-Grafana-Data-Report",
+  },
+  "Software de Provisión":
+  {
+    image: alcortImage,
+    description:"Gran parte de mis prácticas las he dedicado a mantener y mejorar un software de provisión y mantenimiento FTTH.",
+    tools: [pythonImage, flaskImage, jinjaImage, htmlImage, javascriptImage, cssImage, mysqlImage],
+    url: "https://alcort.net/soluciones/meeting-point/",
+  },
+  Compilador:
+  {
+    image: compiladorImage,
+    description:"Creación de un compilador para un lenguaje de programación inventado generando su equivalente a lenguaje ensamblador, y usando las librerías de CUP y JFlex.",
+    tools: [javaImage],
+    url: "https://github.com/mrcl29/Compilador",
+  },
+  "Gun Incidents in the USA":
+  {
+    image: dataMiningImage,
+    description:"Proyecto de Minería de Datos creado con Jupyther Notebook donde se analizan un gran volumen de datos relacionados con incidentes con armas en los Estados Unidos.",
+    tools: [pythonImage],
+    url: "https://github.com/mrcl29/Gun-Incidents-In-USA-DataMining",
+  },
+  "Joc del 7":
+  {
+    image: jocdel7Image,
+    description:"Juego de cartas creado en Java.",
+    tools: [javaImage],
+    url: "https://github.com/mrcl29/Joc-del-7",
+  },
+};
+
+// Importar las imágenes de todas mis experiencias
+import alcortImage from "@/assets/experience/alcort.avif"
+export const ALCORT = alcortImage;

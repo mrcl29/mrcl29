@@ -16,11 +16,11 @@ const ContactInfo = ({ name, user, icon, url }) => {
       </a>
       <button
         onClick={() => {
-          if (name != "Email") {
+          if (url.includes("https")) {
             window.open(url, "_blank");
           }
         }}
-        className={`select-text font-bold text-black bg-gray-300 py-1 px-2 rounded-lg text-center ${(name =="Email") ? "cursor-text" : "cursor-pointer"}`} // Añadí margen izquierdo para separar el texto del icono
+        className={`select-text font-bold text-black bg-gray-300 py-1 px-2 rounded-lg text-center ${(!url.includes("https")) ? "cursor-text" : "cursor-pointer"}`} // Añadí margen izquierdo para separar el texto del icono
       >
         {user}
       </button>

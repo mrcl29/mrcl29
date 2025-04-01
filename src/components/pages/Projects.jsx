@@ -1,20 +1,12 @@
+import { PROJECTS, ALCORT } from "@/constants/constants.js"
+import ProjectCard from "@/components/projects/ProjectCard.jsx";
+
 const Projects = () => {
     return (
-      <div>Soy un estudiante de Ingeniería Informática con 22 años, actualmente cursando mis estudios en la Universidad de las Islas Baleares (UIB) en Mallorca. Mi formación abarca áreas clave como Minería de Datos, Aprendizaje Automático y Desarrollo Web.
-
-      He adquirido una sólida experiencia en desarrollo full stack con habilidades en lenguajes y tecnologías populares como React, SQL, Java y Python entre otros. Mi enfoque se centra en crear soluciones completas y eficientes, desde el diseño de interfaces hasta la gestión de bases de datos y servidores.Soy un estudiante de Ingeniería Informática con 22 años, actualmente cursando mis estudios en la Universidad de las Islas Baleares (UIB) en Mallorca. Mi formación abarca áreas clave como Minería de Datos, Aprendizaje Automático y Desarrollo Web.
-
-He adquirido una sólida experiencia en desarrollo full stack con habilidades en lenguajes y tecnologías populares como React, SQL, Java y Python entre otros. Mi enfoque se centra en crear soluciones completas y eficientes, desde el diseño de interfaces hasta la gestión de bases de datos y servidores.Soy un estudiante de Ingeniería Informática con 22 años, actualmente cursando mis estudios en la Universidad de las Islas Baleares (UIB) en Mallorca. Mi formación abarca áreas clave como Minería de Datos, Aprendizaje Automático y Desarrollo Web.
-
-He adquirido una sólida experiencia en desarrollo full stack con habilidades en lenguajes y tecnologías populares como React, SQL, Java y Python entre otros. Mi enfoque se centra en crear soluciones completas y eficientes, desde el diseño de interfaces hasta la gestión de bases de datos y servidores.Soy un estudiante de Ingeniería Informática con 22 años, actualmente cursando mis estudios en la Universidad de las Islas Baleares (UIB) en Mallorca. Mi formación abarca áreas clave como Minería de Datos, Aprendizaje Automático y Desarrollo Web.
-
-He adquirido una sólida experiencia en desarrollo full stack con habilidades en lenguajes y tecnologías populares como React, SQL, Java y Python entre otros. Mi enfoque se centra en crear soluciones completas y eficientes, desde el diseño de interfaces hasta la gestión de bases de datos y servidores.Soy un estudiante de Ingeniería Informática con 22 años, actualmente cursando mis estudios en la Universidad de las Islas Baleares (UIB) en Mallorca. Mi formación abarca áreas clave como Minería de Datos, Aprendizaje Automático y Desarrollo Web.
-
-He adquirido una sólida experiencia en desarrollo full stack con habilidades en lenguajes y tecnologías populares como React, SQL, Java y Python entre otros. Mi enfoque se centra en crear soluciones completas y eficientes, desde el diseño de interfaces hasta la gestión de bases de datos y servidores.Soy un estudiante de Ingeniería Informática con 22 años, actualmente cursando mis estudios en la Universidad de las Islas Baleares (UIB) en Mallorca. Mi formación abarca áreas clave como Minería de Datos, Aprendizaje Automático y Desarrollo Web.
-
-He adquirido una sólida experiencia en desarrollo full stack con habilidades en lenguajes y tecnologías populares como React, SQL, Java y Python entre otros. Mi enfoque se centra en crear soluciones completas y eficientes, desde el diseño de interfaces hasta la gestión de bases de datos y servidores.Soy un estudiante de Ingeniería Informática con 22 años, actualmente cursando mis estudios en la Universidad de las Islas Baleares (UIB) en Mallorca. Mi formación abarca áreas clave como Minería de Datos, Aprendizaje Automático y Desarrollo Web.
-
-He adquirido una sólida experiencia en desarrollo full stack con habilidades en lenguajes y tecnologías populares como React, SQL, Java y Python entre otros. Mi enfoque se centra en crear soluciones completas y eficientes, desde el diseño de interfaces hasta la gestión de bases de datos y servidores.</div>
+      <div className="mt-10 px-4 w-full">
+        <h1 className="mb-5 text-lg sm:text-1xl md:text-2xl lg:text-4xl font-bold">Proyectos</h1>
+        <ProjectCard name="hola" image={ALCORT} description="hola como estás" url="youtube.com" />
+      </div>
     );
   };
   
