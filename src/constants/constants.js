@@ -170,16 +170,16 @@ export const TOOLS = {
       image: rustImage,
       //points: 1,
     },
-    PHP: {
-      url: "https://www.php.net/",
-      image: phpImage,
-      //points: 1,
-    },
-    C: {
-      url: "https://en.wikipedia.org/wiki/C_(programming_language)",
-      image: cImage,
-      //points: 1,
-    },
+    // PHP: {
+    //   url: "https://www.php.net/",
+    //   image: phpImage,
+    //   //points: 1,
+    // },
+    // C: {
+    //   url: "https://en.wikipedia.org/wiki/C_(programming_language)",
+    //   image: cImage,
+    //   //points: 1,
+    // },
   },
 };
 

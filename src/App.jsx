@@ -9,7 +9,7 @@ import Experience from "@/components/pages/Experience.jsx";
 import Contact from "@/components/pages/Contact.jsx";
 
 function App() {
-  const [currentPage, setCurrentPage] = useState("home");
+  const [currentPage, setCurrentPage] = useState("main");
 
   // Refs para las secciones de contenido
   const homeRef = useRef(null);
@@ -18,10 +18,10 @@ function App() {
   const contactRef = useRef(null);
 
   const sectionRefs =  {
-    home: homeRef,
-    projects: projectsRef,
-    experience: experienceRef,
-    contact: contactRef,
+    main: homeRef,
+    proyectos: projectsRef,
+    experiencia: experienceRef,
+    contacto: contactRef,
   };
 
   const scrollToSection =  (section) => {
@@ -83,22 +83,22 @@ function App() {
       <div className="h-full w-full lg:w-1/2 overflow-auto z-10 scroll-smooth">
         <MainLayout>
           {/* Sección Home */}
-          <div ref={homeRef} id="home" className="section h-screen">
+          <div ref={homeRef} id="main" className="section h-screen">
             <Home />
           </div>
 
           {/* Sección Projects */}
-          <div ref={projectsRef} id="projects" className="section">
+          <div ref={projectsRef} id="proyectos" className="section">
             <Projects />
           </div>
 
           {/* Sección Experiencia */}
-          <div ref={experienceRef} id="experience" className="section">
+          <div ref={experienceRef} id="experiencia" className="section">
             <Experience />
           </div>
 
           {/* Sección Contact */}
-          <div ref={contactRef} id="contact" className="section">
+          <div ref={contactRef} id="contacto" className="section">
             <Contact />
           </div>
         </MainLayout>

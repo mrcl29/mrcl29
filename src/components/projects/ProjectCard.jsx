@@ -1,18 +1,31 @@
+import { TypeAnimation } from "react-type-animation";
+import { useMediaQuery } from 'react-responsive';
+import { useState } from "react";
+
 const ProjectCard = ({ name, image, description, url, tools }) => {
+  // Verifica si la pantalla es pequeña
+  const isSmallScreen = useMediaQuery({ query: "(max-width: 640px)" });
+  // Estado para controlar el hover
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div className="h-full w-full rounded-lg overflow-hidden shadow-md bg-gray-100 border-1 border-white my-2 group">
-      {/* Imagen */}
+    <div
+      className="h-full w-full rounded-lg overflow-hidden shadow-md bg-gray-200 border-1 border-white my-2 group relative"
+      // Manejo de eventos de hover
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Imagen - Se mantiene en su lugar */}
       <img
         src={image}
         alt={name}
-        className="w-full z-0 h-48 scale-80 object-contain my-3 transform rotate-340 transition-all duration-300 group-hover:rotate-360 group-hover:scale-100"
+        className="w-full h-20 sm:h-20 md:h-35 md:scale-140 object-contain my-3 transform md:rotate-340 transition-all duration-300 md:group-hover:rotate-360 md:group-hover:scale-110 relative top-0 left-0 z-0"
       />
-      <hr className="z-1 border-t-3 border-black" />
 
-      <div className="w-full z-1 bg-black p-3 m-0">
+      <div className="w-full bg-black p-3 m-0 relative z-10">
         {/* Nombre del proyecto */}
-        <div className="flex justify-between items-center">
-          <h2 className="text-xl font-extrabold text-left text-white">
+        <div className="md:flex md:flex-row sm:flex-col justify-between items-center">
+          <h2 className="text-base sm:text-base md:text-xl font-extrabold text-left text-white">
             {name}
           </h2>
 
@@ -21,12 +34,12 @@ const ProjectCard = ({ name, image, description, url, tools }) => {
             {tools.map((tool, index) => (
               <div
                 key={index}
-                className="bg-gray-200 rounded-full p-1 transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-0 rotate-12"
+                className="bg-gray-200 rounded-full p-1 transform transition-all duration-300 group-hover:scale-110"
               >
                 <img
                   src={tool}
                   alt={`tool-${index}`}
-                  className="w-6 h-6 object-contain rounded-full transition-all duration-300 group-hover:scale-100 group-hover:rotate-0"
+                  className="w-3 h-3 sm:w-3 sm:h-3 md:w-6 md:h-6 object-contain rounded-full transition-all duration-300 group-hover:scale-100"
                 />
               </div>
             ))}
@@ -34,8 +47,22 @@ const ProjectCard = ({ name, image, description, url, tools }) => {
         </div>
 
         {/* Descripción */}
-        <p className="text-left text-base font-extralight italic text-gray-100 mt-2">
-          {description}
+        <p className="text-left min-h-2 sm:min-h-3 md:min-h-6 font-extralight italic text-gray-100 mt-2">
+          {/* Mostrar la animación solo cuando el hover esté activo */}
+          {isSmallScreen ? (
+            <span className="text-sm">{description}</span>
+          ) : (
+            isHovered && (
+              <TypeAnimation
+                sequence={[description, 100]}
+                wrapper="span"
+                speed={100}
+                repeat={Infinity}
+                cursor={false}
+                className="text-base"
+              />
+            )
+          )}
         </p>
       </div>
 

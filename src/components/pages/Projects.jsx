@@ -3,12 +3,14 @@ import ProjectCard from "@/components/projects/ProjectCard.jsx";
 
 const Projects = () => {
   return (
-    <div className="mt-10 px-4 w-full">
+    <div className="mt-10 px-5 w-full">
       <h1 className="mb-4 text-lg sm:text-1xl md:text-2xl lg:text-4xl font-bold">
         Proyectos
       </h1>
+      
       {Object.entries(PROJECTS).map(([name, info]) => (
         <ProjectCard
+          key={name}
           name={name}
           image={info.image}
           description={info.description}
@@ -16,13 +18,20 @@ const Projects = () => {
           tools={info.tools}
         />
       ))}
+
       <a
         href={CONTACT.GitHub.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-left text-blue-100 inline-block font-bold underline"
+        className="group w-min h-min"
       >
-        Explorar más proyectos &rarr;
+        <div className="w-min h-min bg-gray-800 p-4 m-0 flex items-center rounded-3xl my-5 border-1 border-white">
+          {/* Botón "Explorar más proyectos" */}
+          <p className="text-left text-blue-50 font-bold whitespace-nowrap overflow-hidden text-ellipsis relative">
+            Explorar más proyectos &rarr;
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-50 transition-all duration-300 group-hover:w-full group-hover:h-1"></span>
+          </p>
+        </div>
       </a>
     </div>
   );

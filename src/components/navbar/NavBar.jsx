@@ -30,7 +30,7 @@ const NavBar = ({ currentPage, setCurrentPage, scrollToSection }) => {
       ></div>
 
       <ul className="flex w-full relative">
-        {["home", "projects", "experience", "contact"].map((route) => (
+        {["main", "proyectos", "experiencia", "contacto"].map((route) => (
           <li
             key={route}
             ref={(el) => (navRefs.current[route] = el)}
