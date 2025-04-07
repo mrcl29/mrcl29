@@ -13,6 +13,7 @@ const Projects = () => {
           image={info.image}
           description={info.description}
           url={info.url}
+          tools={info.tools}
         />
       ))}
       <a
@@ -21,7 +22,7 @@ const Projects = () => {
         rel="noopener noreferrer"
         className="text-left text-blue-100 inline-block font-bold underline"
       >
-        Ver más &rarr;
+        Explorar más proyectos &rarr;
       </a>
     </div>
   );

@@ -56,7 +56,7 @@ const FixedLayout = ({ currentPage, setCurrentPage, scrollToSection }) => {
             <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-3">
               {NAME}
             </h1>
-            <h2 className="font-semibold text-sm sm:text-xl md:text-2xl lg:text-3xl text-gray-400">
+            <h2 className="font-semibold text-sm sm:text-xl md:text-2xl lg:text-3xl italic text-gray-400">
               Full Stack Developer
             </h2>
           </div>
