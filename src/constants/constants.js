@@ -199,7 +199,7 @@ export const PROJECTS = {
   },
   "Automatic-Grafana-Data-Report":
   {
-    image: null,
+    image: grafanaImage,
     description:"Script de Python para automatizar la creación de reportes personalizados en formato excel a partir de los datos recogidos en dashboards de Grafana.",
     tools: [pythonImage, flaskImage, linuxImage],
     url: "https://github.com/mrcl29/Automatic-Grafana-Data-Report",

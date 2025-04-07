@@ -1,6 +1,6 @@
 const ProjectCard = ({ name, image, description, url }) => {
   return (
-    <div className="h-full w-full rounded-lg overflow-hidden shadow-md bg-gray-100 border-1 border-white">
+    <div className="h-full w-full rounded-lg overflow-hidden shadow-md bg-gray-100 border-1 border-white my-2">
       {/* Imagen */}
       <img
         src={image}
@@ -14,7 +14,7 @@ const ProjectCard = ({ name, image, description, url }) => {
       <h2 className="text-xl font-extrabold text-left text-white">{name}</h2>
 
       {/* Descripción */}
-      <p className="text-left font-semibold text-gray-100 mt-2">
+      <p className="text-left font-medium text-gray-100 mt-2">
         {description}
       </p>
       </div>
