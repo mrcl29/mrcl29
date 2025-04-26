@@ -11,7 +11,7 @@ const ContactInfo = ({ name, user, icon, url }) => {
         <img
           src={icon}
           alt={name}
-          className="w-9 h-9 filter grayscale brightness-75"
+          className="w-9 h-9 filter grayscale brightness-100 hover:scale-130 transition-transform duration-300 ease-in-out"
         />
       </a>
       <button
@@ -20,7 +20,7 @@ const ContactInfo = ({ name, user, icon, url }) => {
             window.open(url, "_blank");
           }
         }}
-        className={`select-text font-bold text-black bg-gray-300 py-1 px-2 rounded-lg text-center ${(!url.includes("https")) ? "cursor-text" : "cursor-pointer"}`} // Añadí margen izquierdo para separar el texto del icono
+        className={`select-text font-bold text-white bg-gray-800 border-1 border-gray-400 py-1 px-2 rounded-lg text-center ${(!url.includes("https")) ? "cursor-text" : "cursor-pointer"}`} // Añadir margen izquierdo para separar el texto del icono
       >
         {user}
       </button>

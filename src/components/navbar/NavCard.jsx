@@ -12,7 +12,7 @@ const NavCard = ({
         scrollToSection(route); // Desplázate a la sección correspondiente
       }}
       className={`cursor-pointer w-full h-full flex items-center justify-center rounded-full transition-all duration-400 ${
-        isChecked ? "text-black" : "hover:scale-130 text-gray-400"
+        isChecked ? "text-black" : "hover:scale-130 text-gray-200"
       }`}
     >
       <input

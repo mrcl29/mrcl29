@@ -1,24 +1,9 @@
-import { useState } from "react"; // Importar useState para controlar el modal
-import { BsInfoSquareFill } from "react-icons/bs";
-import { NAME, FOTO, INFO, CONTACT } from "@/constants/constants.js";
-import Modal from "@/components/extra/Modal.jsx";
+import { TypeAnimation } from "react-type-animation";
+import { NAME, FOTO, CONTACT } from "@/constants/constants.js";
 import NavBar from "@/components/navbar/NavBar.jsx";
 import ContactInfo from "@/components/contact/ContactInfo";
 
 const FixedLayout = ({ currentPage, setCurrentPage, scrollToSection }) => {
-  const [isHovered, setIsHovered] = useState(false); // Estado para controlar el hover
-  const [icon, setIcon] = useState(<BsInfoSquareFill size={25} />); // Estado para cambiar el contenido del icono
-
-  const handleMouseEnter = () => {
-    setIsHovered(true); // Activa el hover
-    setIcon(<Modal text={INFO} />); // Cambia el icono al pasar el ratón
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false); // Desactiva el hover
-    setIcon(<BsInfoSquareFill size={25} />); // Restaura el icono original
-  };
-
   return (
     <header className="w-[100%] h-full mx-auto flex flex-col justify-between pb-5">
       <div className="fixed justify-center items-center top-0 left-0 w-1/2 z-100 pt-2 px-10 fade-left">
@@ -56,8 +41,15 @@ const FixedLayout = ({ currentPage, setCurrentPage, scrollToSection }) => {
             <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-3">
               {NAME}
             </h1>
-            <h2 className="font-semibold text-sm sm:text-xl md:text-2xl lg:text-3xl italic text-gray-400">
-              Full Stack Developer
+            <h2>
+              <TypeAnimation
+                sequence={["Ingeniero de Software", 1000]}
+                wrapper="span"
+                speed={1}
+                repeat={Infinity}
+                cursor={true}
+                className="font-semibold text-sm sm:text-xl md:text-2xl lg:text-3xl italic text-gray-400"
+              />
             </h2>
           </div>
         </div>
