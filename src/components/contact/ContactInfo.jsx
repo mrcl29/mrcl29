@@ -1,11 +1,27 @@
 const ContactInfo = ({ name, user, icon, url }) => {
+  const isDownload = name === "CV";
+
+  const handleClick = () => {
+    if (isDownload) {
+      // Crear un enlace temporal para forzar la descarga
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = url.split("/").pop(); // Puedes personalizar el nombre aquí si quieres
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else if (url.includes("https")) {
+      window.open(url, "_blank");
+    }
+  };
+
   return (
     <div className="flex items-center justify-center p-0 m-0">
-      {/* Ajusta el contenedor */}
       <a
         href={url}
-        target="_blank"
-        rel="noopener noreferrer"
+        target={isDownload ? undefined : "_blank"}
+        rel={isDownload ? undefined : "noopener noreferrer"}
+        download={isDownload}
         className="flex items-center mr-2"
       >
         <img
@@ -15,12 +31,8 @@ const ContactInfo = ({ name, user, icon, url }) => {
         />
       </a>
       <button
-        onClick={() => {
-          if (url.includes("https")) {
-            window.open(url, "_blank");
-          }
-        }}
-        className={`select-text font-bold text-white bg-gray-800 border-1 border-gray-400 py-1 px-2 rounded-lg text-center ${(!url.includes("https")) ? "cursor-text" : "cursor-pointer"}`} // Añadir margen izquierdo para separar el texto del icono
+        onClick={handleClick}
+        className={`select-text font-bold text-white bg-gray-800 border-1 border-gray-400 py-1 px-2 rounded-lg text-center hover:scale-110 transition-transform duration-300 ease-in-out ${(!url.includes("https") && !isDownload) ? "cursor-text" : "cursor-pointer"}`}
       >
         {user}
       </button>
