@@ -205,7 +205,7 @@ export const PROJECTS = {
     tools: [reactImage, tailwindImage, viteImage],
     url: "https://github.com/mrcl29/Portfolio",
   },
-  "Automatic-Grafana-Data-Report":
+  "Grafana-Data-Report":
   {
     image: grafanaImage,
     description:"Script de Python para automatizar la creación de reportes personalizados en formato excel a partir de los datos recogidos en dashboards de Grafana.",
