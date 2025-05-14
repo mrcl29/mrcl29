@@ -32,7 +32,7 @@ const ContactInfo = ({ name, user, icon, url }) => {
       </a>
       <button
         onClick={handleClick}
-        className={`select-text font-bold text-white bg-gray-800 border-1 border-gray-400 py-1 px-2 rounded-lg text-center hover:scale-110 transition-transform duration-300 ease-in-out ${(!url.includes("https") && !isDownload) ? "cursor-text" : "cursor-pointer"}`}
+        className={`select-text font-bold text-black bg-white border-1 border-black py-1 px-2 rounded-lg text-center hover:scale-110 transition-transform duration-300 ease-in-out ${(!url.includes("https") && !isDownload) ? "cursor-text" : "cursor-pointer"}`}
       >
         {user}
       </button>

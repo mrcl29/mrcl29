@@ -1,6 +1,6 @@
 export const NAME = "Marc Llobera Villalonga";
 
-import foto from "@/assets/foto_CV.avif";
+import foto from "/foto_CV.avif";
 export const FOTO = foto;
 
 export const INFO = `Soy un estudiante de Ingeniería Informática de 22 años, actualmente cursando mis estudios en la Universidad de las Islas Baleares (UIB) en Mallorca. Mi formación abarca áreas clave como <b>Minería de Datos, Aprendizaje Automático y Desarrollo Web</b>.
@@ -35,7 +35,7 @@ export const CONTACT = {
   },
   CV: {
     user: "CV",
-    url: "@/assets/CV_Marc_Llobera_Villalonga.pdf",
+    url: "/CV_Marc_Llobera_Villalonga.pdf",
     image: cv,
   },
 };
@@ -52,6 +52,7 @@ import reactImage from "@/assets/tools/react.svg";
 import tailwindImage from "@/assets/tools/tailwind.svg";
 import jinjaImage from "@/assets/tools/jinja.svg";
 import flaskImage from "@/assets/tools/flask.svg";
+import fastapiImage from "@/assets/tools/fastapi.svg";
 import mariadbImage from "@/assets/tools/mariadb.svg";
 import mysqlImage from "@/assets/tools/mysql.svg";
 import postgresqlImage from "@/assets/tools/postgresql.svg";
@@ -121,6 +122,13 @@ export const TOOLS = {
       image: flaskImage,
       //points: 1,
     },
+    FastAPI: {
+      url: "https://fastapi.tiangolo.com/",
+      image: fastapiImage,
+      //points: 1,
+    },
+  },
+  Databases:{
     MariaDB: {
       url: "https://mariadb.org/",
       image: mariadbImage,
@@ -164,23 +172,23 @@ export const TOOLS = {
       //points: 2,
     },
   },
-  "Aprendiendo...": {
-    Rust: {
-      url: "https://www.rust-lang.org/",
-      image: rustImage,
-      //points: 1,
-    },
-    // PHP: {
-    //   url: "https://www.php.net/",
-    //   image: phpImage,
-    //   //points: 1,
-    // },
-    // C: {
-    //   url: "https://en.wikipedia.org/wiki/C_(programming_language)",
-    //   image: cImage,
-    //   //points: 1,
-    // },
-  },
+  // "Aprendiendo...": {
+  //   Rust: {
+  //     url: "https://www.rust-lang.org/",
+  //     image: rustImage,
+  //     //points: 1,
+  //   },
+  //   PHP: {
+  //     url: "https://www.php.net/",
+  //     image: phpImage,
+  //     //points: 1,
+  //   },
+  //   C: {
+  //     url: "https://en.wikipedia.org/wiki/C_(programming_language)",
+  //     image: cImage,
+  //     //points: 1,
+  //   },
+  // },
 };
 
 // Importar las imágenes de todos los proyectos
@@ -236,4 +244,39 @@ export const PROJECTS = {
 
 // Importar las imágenes de todas mis experiencias
 import alcortImage from "@/assets/experience/alcort.avif"
+import lifeguardImage from "@/assets/experience/lifeguardImage.jpg"
 export const ALCORT = alcortImage;
+
+export const EXPERIENCES = {
+  "Desarrollador Full Stack":
+  {
+    where: "Alcort Ingeniería y Asesoría",
+    image: alcortImage,
+    from: "01/07/2024",
+    to: "Actualidad",
+    description: "Realicé prácticas y posteriormente fui contratado para tareas como desarrollador Full Stack en una empresa especializada entre otras cosas en operación y mantenimiento de telecomunicaciones, donde trabajé con tecnologías como Python, Flask, Jinja, Linux shell, Grafana y otras herramientas.",
+    url: "https://alcort.net/",
+  },
+  "Socorrista":
+  {
+    where: "Grupo Salvamento Acuático",
+    image: lifeguardImage,
+    from: "01/05/2022",
+    to: "30/08/2023",
+    description: "Trabajé dos veranos como socorrista, donde obtuve el certificado de primeros auxilios y mejoré mi nivel de inglés mediante la interacción diaria con clientes.",
+    url: "https://www.salvamento.net/empresa",
+  },
+}
+
+import uibImage from "@/assets/education/uib.svg"
+
+export const EDUCATION = {
+  "Grado en Ingeniería Informática":
+  {
+    where: "Universidad de las Islas Baleares (UIB)",
+    image: uibImage,
+    from: "2020",
+    to: "2025",
+    url: "https://estudis.uib.es/es/estudis-de-grau/grau/informatica/GIN3-E/21776/index.html",
+  }
+}

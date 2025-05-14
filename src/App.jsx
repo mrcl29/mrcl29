@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useMemo } from "react";
+import { useState, useRef, useEffect } from "react";
 import "@/App.css";
 import ParticleBackground from "@/components/extra/ParticleBackground.jsx";
 import FixedLayout from "@/components/layouts/FixedLayout.jsx";
@@ -6,7 +6,7 @@ import MainLayout from "@/components/layouts/MainLayout.jsx";
 import Home from "@/components/pages/Home.jsx";
 import Projects from "@/components/pages/Projects.jsx";
 import Experience from "@/components/pages/Experience.jsx";
-import Contact from "@/components/pages/Contact.jsx";
+import Education from "@/components/pages/Education.jsx";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("main");
@@ -15,13 +15,13 @@ function App() {
   const homeRef = useRef(null);
   const projectsRef = useRef(null);
   const experienceRef = useRef(null);
-  const contactRef = useRef(null);
+  const educationRef = useRef(null);
 
   const sectionRefs =  {
     main: homeRef,
     proyectos: projectsRef,
     experiencia: experienceRef,
-    contacto: contactRef,
+    educacion: educationRef,
   };
 
   const scrollToSection =  (section) => {
@@ -98,8 +98,8 @@ function App() {
           </div>
 
           {/* Sección Contact */}
-          <div ref={contactRef} id="contacto" className="section">
-            <Contact />
+          <div ref={educationRef} id="educacion" className="section">
+            <Education />
           </div>
         </MainLayout>
       </div>

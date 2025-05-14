@@ -2,7 +2,7 @@ import { TypeAnimation } from "react-type-animation";
 import { useMediaQuery } from "react-responsive";
 import { useState, useEffect } from "react";
 
-const ProjectCard = ({ name, image, description, url, tools }) => {
+const ExperienceCard = ({ name, where, image, from, to, description, url }) => {
   // Verifica si la pantalla es pequeña
   const isSmallScreen = useMediaQuery({ query: "(max-width: 640px)" });
   // Estado para controlar el hover
@@ -32,31 +32,20 @@ const ProjectCard = ({ name, image, description, url, tools }) => {
 
         <div className="w-full bg-black p-3 m-0 relative z-10">
           {/* Nombre del proyecto */}
-          <div className="md:flex md:flex-row sm:flex-col justify-between items-center">
-            <h2 className="text-base sm:text-base md:text-xl font-extrabold text-left scale-95 text-white transition-all duration-300 group-hover:scale-100">
+          <div className="md:flex md:flex-col sm:flex-col justify-start items-start">
+            <h2 className="text-base  sm:text-base md:text-xl font-extrabold scale-95 text-left text-white transition-all duration-300 group-hover:scale-100">
               {name}
-              {/* <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-200 transition-all duration-300 group-hover:w-full group-hover:h-1"></span> */}
             </h2>
-
-            {/* Mostrar las herramientas a la derecha */}
-            <div className="flex space-x-2">
-              {tools.map((tool, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-200 rounded-full p-1 transform transition-all duration-300 group-hover:scale-110"
-                >
-                  <img
-                    src={tool}
-                    alt={`tool-${index}`}
-                    className="w-3 h-3 sm:w-3 sm:h-3 md:w-6 md:h-6 object-contain rounded-full transition-all duration-300 group-hover:scale-100"
-                  />
-                </div>
-              ))}
-            </div>
+            <h3 className="text-sm sm:text-sm md:text-base font-bold text-left text-gray-100 italic">
+              {where}
+            </h3>
+            <h4 className="text-xs sm:text-xs md:text-sm font-semibold text-left text-gray-100 italic">
+              {from} - {to}
+            </h4>
           </div>
 
           {/* Descripción */}
-          <p className="text-left min-h-2 sm:min-h-3 md:min-h-6 font-normal text-gray-200 mt-2">
+          <p className="text-left min-h-2 sm:min-h-3 md:min-h-6 font-medium text-gray-200 mt-2">
             {isSmallScreen ? (
               <span className="text-sm">{description}</span>
             ) : hasTyped ? (
@@ -84,4 +73,4 @@ const ProjectCard = ({ name, image, description, url, tools }) => {
   );
 };
 
-export default ProjectCard;
+export default ExperienceCard;

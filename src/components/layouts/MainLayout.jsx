@@ -1,5 +1,3 @@
-import * as motion from "motion/react-client";
-
 const MainLayout = ({ children }) => {
   return (
     <main className="min-h-screen pr-[1%] sm:pr-[3%] md:pr-[5%] lg:pr-[10%] overflow-auto">
