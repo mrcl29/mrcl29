@@ -198,13 +198,6 @@ import compiladorImage from "@/assets/projects/compilador.png";
 import jocdel7Image from "@/assets/projects/jocdel7.png";
 
 export const PROJECTS = {
-  Portfolio:
-  {
-    image: portfolioImage,
-    description:"Portfolio personal tomado como proyecto Frontend para practicar el uso de React y Tailwind, y además mejorar mis habiliades de diseño y buenas prácticas en la programación descriptiva.",
-    tools: [reactImage, tailwindImage, viteImage],
-    url: "https://github.com/mrcl29/Portfolio",
-  },
   "Grafana-Data-Report":
   {
     image: grafanaImage,
@@ -240,6 +233,13 @@ export const PROJECTS = {
     tools: [javaImage],
     url: "https://github.com/mrcl29/Joc-del-7",
   },
+  // Portfolio:
+  // {
+  //   image: portfolioImage,
+  //   description:"Portfolio personal tomado como proyecto Frontend para practicar el uso de React y Tailwind, y además mejorar mis habiliades de diseño y buenas prácticas en la programación descriptiva.",
+  //   tools: [reactImage, tailwindImage, viteImage],
+  //   url: "https://github.com/mrcl29/Portfolio",
+  // },
 };
 
 // Importar las imágenes de todas mis experiencias
