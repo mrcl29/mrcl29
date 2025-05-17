@@ -35,7 +35,7 @@ export const CONTACT = {
   },
   CV: {
     user: "CV",
-    url: "/portfolio/CV_Marc_Llobera_Villalonga.pdf",
+    url: "/mrcl29/CV_Marc_Llobera_Villalonga.pdf",
     image: cv,
   },
 };
