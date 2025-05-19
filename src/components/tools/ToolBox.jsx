@@ -4,7 +4,7 @@ import ToolCard from "./ToolCard"; // Importar ToolCard
 // Componente ToolBox: Recibe herramientas de una categoría y las renderiza
 function ToolBox({ category, tools }) {
   return (
-    <div className="mb-2">
+    <div className="">
       <h3 className="text-lg font-bold text-center mb-2 text-white">
         {category}
       </h3>{" "}

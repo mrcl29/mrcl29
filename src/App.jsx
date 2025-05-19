@@ -7,8 +7,10 @@ import Home from "@/components/pages/Home.jsx";
 import Projects from "@/components/pages/Projects.jsx";
 import Experience from "@/components/pages/Experience.jsx";
 import Education from "@/components/pages/Education.jsx";
+import useIsMobile from "@/components/hooks/useIsMobile.jsx";
 
 function App() {
+  const isMobile = useIsMobile(); // Detecta si es móvil
   const [currentPage, setCurrentPage] = useState("main");
 
   // Refs para las secciones de contenido
@@ -17,14 +19,14 @@ function App() {
   const experienceRef = useRef(null);
   const educationRef = useRef(null);
 
-  const sectionRefs =  {
+  const sectionRefs = {
     main: homeRef,
     proyectos: projectsRef,
     experiencia: experienceRef,
     educacion: educationRef,
   };
 
-  const scrollToSection =  (section) => {
+  const scrollToSection = (section) => {
     sectionRefs[section].current.scrollIntoView({
       behavior: "smooth",
       block: "start",
@@ -70,20 +72,32 @@ function App() {
   return (
     // App.js
     <div className="relative w-full h-screen overflow-auto flex flex-col lg:flex-row">
-      {/* Contenido Fijo (izquierda) */}
-      <div className="h-full w-full lg:w-1/2 flex items-center justify-center z-20">
-        <FixedLayout
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          scrollToSection={scrollToSection}
-        />
-      </div>
+      {/* Contenido Fijo (izquierda) en pantallas grandes */}
+      {!isMobile ? (
+        <div className="relative w-full h-auto lg:h-screen lg:w-1/2 overflow-auto flex flex-col lg:flex-row">
+          <FixedLayout
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            scrollToSection={scrollToSection}
+          />
+        </div>
+      ) : null}
 
       {/* Contenido principal (derecha) con scroll-smooth */}
       <div className="h-full w-full lg:w-1/2 overflow-auto z-10 scroll-smooth">
+        {/* Contenido en pantallas pequeñas */}
+        {isMobile ? (
+          <div className="relative w-full h-auto lg:h-screen lg:w-1/2 overflow-auto flex flex-col lg:flex-row">
+            <FixedLayout
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              scrollToSection={scrollToSection}
+            />
+          </div>
+        ) : null}
         <MainLayout>
           {/* Sección Home */}
-          <div ref={homeRef} id="main" className="section h-screen">
+          <div ref={homeRef} id="main" className="section">
             <Home />
           </div>
 

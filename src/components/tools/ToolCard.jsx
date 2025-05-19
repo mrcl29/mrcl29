@@ -1,5 +1,4 @@
-import React from "react";
-
+import { useState, useEffect } from "react";
 // Componente ToolCard: Muestra una herramienta individual
 function ToolCard({ name, url, image }) {
   // Función para generar los círculos
@@ -28,20 +27,19 @@ function ToolCard({ name, url, image }) {
       <div
         className="flex flex-col items-center justify-center bg-gray-200 text-black rounded-lg shadow-md w-full h-full 
                    transition-transform duration-400 transform hover:scale-150 hover:shadow-xl hover:z-100 hover:bg-white border-3 border-black"
-      > {/* Contenedor con animación en hover */}
-        
+      >
+        {" "}
+        {/* Contenedor con animación en hover */}
         {/* Imagen con tamaño reducido */}
         <img
           src={image}
           alt={name}
           className="w-[45%] h-[45%] m-2 object-contain" // Ajusta el tamaño de la imagen según la pantalla
         />
-        
         {/* Nombre ajustable con tamaño relativo */}
-        <div className="text-xs sm:text-sm md:text-sm font-semibold text-center w-full whitespace-nowrap">
+        <div className="text-xs font-semibold text-center w-full whitespace-nowrap">
           {name}
         </div>
-        
         {/* Círculos ajustados al tamaño del contenedor */}
         {/* <div className="flex gap-x-1 justify-center w-full py-2">
           {renderCircles(points)} {/* Mostrar círculos */}

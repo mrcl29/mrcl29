@@ -1,4 +1,3 @@
-import React from "react";
 import ToolBox from "./ToolBox"; // Importar ToolBox
 import { TOOLS } from "@/constants/constants.js";
 
