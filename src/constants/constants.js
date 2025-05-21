@@ -53,6 +53,7 @@ import tailwindImage from "@/assets/tools/tailwind.svg";
 import jinjaImage from "@/assets/tools/jinja.svg";
 import flaskImage from "@/assets/tools/flask.svg";
 import fastapiImage from "@/assets/tools/fastapi.svg";
+import nextJSImage from "@/assets/tools/nextjs.svg";
 import mariadbImage from "@/assets/tools/mariadb.svg";
 import mysqlImage from "@/assets/tools/mysql.svg";
 import postgresqlImage from "@/assets/tools/postgresql.svg";
@@ -125,6 +126,11 @@ export const TOOLS = {
     FastAPI: {
       url: "https://fastapi.tiangolo.com/",
       image: fastapiImage,
+      //points: 1,
+    },
+    NextJS: {
+      url: "https://nextjs.org/",
+      image: nextJSImage,
       //points: 1,
     },
   },
