@@ -23,8 +23,9 @@ const FixedLayout = ({ currentPage, setCurrentPage, scrollToSection }) => {
               src={FOTO}
               loading="eager"
               alt="Fotografía de Marc Llobera Villalonga en formato CV."
-              className="w-12 h-12 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-22 lg:h-22 rounded-full mb-3"
+              className="aspect-square w-12 sm:w-16 md:w-[72px] lg:w-[88px] rounded-full object-cover mb-3"
             />
+
             {/* <div
               onMouseEnter={handleMouseEnter} // Aplicar el evento onMouseEnter
               onMouseLeave={handleMouseLeave} // Aplicar el evento onMouseLeave

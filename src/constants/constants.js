@@ -1,6 +1,6 @@
 export const NAME = "Marc Llobera Villalonga";
 
-import foto from "/foto_CV.avif";
+import foto from "/foto_CV.jpg";
 export const FOTO = foto;
 
 export const INFO = `Soy un estudiante de Ingeniería Informática de 22 años, actualmente cursando mis estudios en la Universidad de las Islas Baleares (UIB) en Mallorca. Mi formación abarca áreas clave como <b>Minería de Datos, Aprendizaje Automático y Desarrollo Web</b>.
@@ -128,7 +128,7 @@ export const TOOLS = {
       //points: 1,
     },
   },
-  Databases:{
+  Databases: {
     MariaDB: {
       url: "https://mariadb.org/",
       image: mariadbImage,
@@ -198,38 +198,45 @@ import compiladorImage from "@/assets/projects/compilador.png";
 import jocdel7Image from "@/assets/projects/jocdel7.png";
 
 export const PROJECTS = {
-  "Grafana-Data-Report":
-  {
+  "Grafana-Data-Report": {
     image: grafanaImage,
-    description:"Script de Python para automatizar la creación de reportes personalizados en formato excel a partir de los datos recogidos en dashboards de Grafana.",
+    description:
+      "Script de Python para automatizar la creación de reportes personalizados en formato excel a partir de los datos recogidos en dashboards de Grafana.",
     tools: [pythonImage, flaskImage, linuxImage],
     url: "https://github.com/mrcl29/Automatic-Grafana-Data-Report",
   },
-  "Software de Provisión":
-  {
+  "Software de Provisión": {
     image: alcortImage,
-    description:"Gran parte de mis prácticas las he dedicado a mantener y mejorar un software de provisión y mantenimiento FTTH.",
-    tools: [pythonImage, flaskImage, jinjaImage, htmlImage, javascriptImage, cssImage, mysqlImage],
+    description:
+      "Gran parte de mis prácticas las he dedicado a mantener y mejorar un software de provisión y mantenimiento FTTH.",
+    tools: [
+      pythonImage,
+      flaskImage,
+      jinjaImage,
+      htmlImage,
+      javascriptImage,
+      cssImage,
+      mysqlImage,
+    ],
     url: "https://alcort.net/soluciones/meeting-point/",
   },
-  Compilador:
-  {
+  Compilador: {
     image: compiladorImage,
-    description:"Creación de un compilador para un lenguaje de programación inventado generando su equivalente a lenguaje ensamblador, y usando las librerías de CUP y JFlex.",
+    description:
+      "Creación de un compilador para un lenguaje de programación inventado generando su equivalente a lenguaje ensamblador, y usando las librerías de CUP y JFlex.",
     tools: [javaImage],
     url: "https://github.com/mrcl29/Compilador",
   },
-  "Gun Incidents in the USA":
-  {
+  "Gun Incidents in the USA": {
     image: dataMiningImage,
-    description:"Proyecto de Minería de Datos creado con Jupyther Notebook donde se analizan un gran volumen de datos relacionados con incidentes con armas en los Estados Unidos.",
+    description:
+      "Proyecto de Minería de Datos creado con Jupyther Notebook donde se analizan un gran volumen de datos relacionados con incidentes con armas en los Estados Unidos.",
     tools: [pythonImage],
     url: "https://github.com/mrcl29/Gun-Incidents-In-USA-DataMining",
   },
-  "Joc del 7":
-  {
+  "Joc del 7": {
     image: jocdel7Image,
-    description:"Juego de cartas creado en Java.",
+    description: "Juego de cartas creado en Java.",
     tools: [javaImage],
     url: "https://github.com/mrcl29/Joc-del-7",
   },
@@ -243,40 +250,39 @@ export const PROJECTS = {
 };
 
 // Importar las imágenes de todas mis experiencias
-import alcortImage from "@/assets/experience/alcort.avif"
-import lifeguardImage from "@/assets/experience/lifeguardImage.jpg"
+import alcortImage from "@/assets/experience/alcort.avif";
+import lifeguardImage from "@/assets/experience/lifeguardImage.jpg";
 export const ALCORT = alcortImage;
 
 export const EXPERIENCES = {
-  "Desarrollador Full Stack":
-  {
+  "Desarrollador Full Stack": {
     where: "Alcort Ingeniería y Asesoría",
     image: alcortImage,
     from: "01/07/2024",
     to: "Actualidad",
-    description: "Realicé prácticas y posteriormente fui contratado para tareas como desarrollador Full Stack en una empresa especializada entre otras cosas en operación y mantenimiento de telecomunicaciones, donde trabajé con tecnologías como Python, Flask, Jinja, Linux shell, Grafana y otras herramientas.",
+    description:
+      "Realicé prácticas y posteriormente fui contratado para tareas como desarrollador Full Stack en una empresa especializada entre otras cosas en operación y mantenimiento de telecomunicaciones, donde trabajé con tecnologías como Python, Flask, Jinja, Linux shell, Grafana y otras herramientas.",
     url: "https://alcort.net/",
   },
-  "Socorrista":
-  {
+  Socorrista: {
     where: "Grupo Salvamento Acuático",
     image: lifeguardImage,
     from: "01/05/2022",
     to: "30/08/2023",
-    description: "Trabajé dos veranos como socorrista, donde obtuve el certificado de primeros auxilios y mejoré mi nivel de inglés mediante la interacción diaria con clientes.",
+    description:
+      "Trabajé dos veranos como socorrista, donde obtuve el certificado de primeros auxilios y mejoré mi nivel de inglés mediante la interacción diaria con clientes.",
     url: "https://www.salvamento.net/empresa",
   },
-}
+};
 
-import uibImage from "@/assets/education/uib.svg"
+import uibImage from "@/assets/education/uib.svg";
 
 export const EDUCATION = {
-  "Grado en Ingeniería Informática":
-  {
+  "Grado en Ingeniería Informática": {
     where: "Universidad de las Islas Baleares (UIB)",
     image: uibImage,
     from: "2020",
     to: "2025",
     url: "https://estudis.uib.es/es/estudis-de-grau/grau/informatica/GIN3-E/21776/index.html",
-  }
-}
+  },
+};
