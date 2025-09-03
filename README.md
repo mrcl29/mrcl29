@@ -14,7 +14,7 @@
   <a href="https://www.instagram.com/llobera29/" target="_blank">
     <img src="https://img.shields.io/static/v1?message=Instagram&logo=instagram&label=&color=E4405F&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="instagram logo"  />
   </a>
-  <a href="[https://linktr.ee/marcllobera](https://linktr.ee/marcllob)" target="_blank">
+  <a href="https://linktr.ee/marcllob" target="_blank">
     <img src="https://img.shields.io/static/v1?message=Linktree&logo=linktree&label=&color=1de9b6&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linktree logo"  />
   </a>
 </div>
