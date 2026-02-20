@@ -5,5 +5,12 @@
     },
     "HEADER": {
         "NAME": "Marc Llobera"
+    },
+    "INTRO": {
+        "CHARGE": "Full-Stack Developer | DevOps",
+        "DESCRIPTION": "Over 2 years of experience building digital products from the database to the UI while maintaining efficient continuous integration. My work focuses on writing functional code and managing the underlying infrastructure."
+    },
+    "FOOTER": {
+        "NAME": "Marc Llobera"
     }
 }

@@ -38,9 +38,9 @@ async function getRepos() {
     });
 
     const { data } = await res.json();
-    const path = './src/assets/repos.json';
+    const path = './public/assets/repos.json';
 
-    if (!fs.existsSync('./src/assets')) fs.mkdirSync('./src/assets', { recursive: true });
+    if (!fs.existsSync('./public/assets')) fs.mkdirSync('./public/assets', { recursive: true });
 
     fs.writeFileSync(path, JSON.stringify(data.user.pinnedItems.nodes, null, 2));
     console.log(`✅ ¡Éxito! Datos guardados en ${path}`);
