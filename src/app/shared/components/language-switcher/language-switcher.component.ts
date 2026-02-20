@@ -9,31 +9,14 @@ import { LanguageService } from '../../../core/services/language.service';
     template: `
     <button
       (click)="languageService.toggleLanguage()"
-      class="lang-btn"
+      class="inline-flex items-center gap-1 px-4 py-2 text-sm border rounded-full cursor-pointer bg-transparent border-(--color-brand-primary) text-(--color-brand-primary) transition-opacity duration-200 ease-in-out hover:opacity-70"
       [attr.aria-label]="languageService.currentLang() === 'es' ? 'Switch to English' : 'Cambiar a Español'">
-      <span [class.active]="languageService.currentLang() === 'es'">ES</span>
-      <span class="separator">/</span>
-      <span [class.active]="languageService.currentLang() === 'en'">EN</span>
+      <span [class.font-extrabold]="languageService.currentLang() === 'es'">ES</span>
+      <span class="opacity-50">/</span>
+      <span [class.font-extrabold]="languageService.currentLang() === 'en'">EN</span>
     </button>
   `,
-    styles: [`
-    .lang-btn {
-      background: transparent;
-      border: 1px solid currentColor;
-      border-radius: 999px;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      font-family: inherit;
-      font-size: 0.875rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      transition: opacity 0.2s ease;
-    }
-    .lang-btn:hover { opacity: 0.7; }
-    .active { font-weight: 800; }
-    .separator { opacity: 0.5; }
-  `]
+    styles: []
 })
 export class LanguageSwitcherComponent {
     languageService = inject(LanguageService);

@@ -1,7 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import 'tailwindcss';
 
-@theme {
+:root {
   --color-brand-primary: #ffffff;
-  --font-display: 'Satoshi', 'sans-serif';
+  --color-backgroud-primary: #000000;
+  --color-brand-secondary: #000000;
+  --color-backgroud-secondary: #ffffff;
+  --font-display: 'Outfit', sans-serif;
+}
+
+html,
+body {
+  background-color: var(--color-backgroud-primary);
+  color: var(--color-brand-primary);
+  font-family: var(--font-display);
 }
