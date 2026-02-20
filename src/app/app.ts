@@ -1,12 +1,15 @@
-import { Component, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
+import { LanguageSwitcherComponent } from './shared/components/language-switcher/language-switcher.component';
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
+    selector: 'app-root',
+    imports: [RouterOutlet, TranslateModule, LanguageSwitcherComponent],
+    templateUrl: './app.html',
+    styleUrl: './app.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class App {
-  protected readonly title = signal('mrcl29');
+    title = 'mrcl29';
 }
