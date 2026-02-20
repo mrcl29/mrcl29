@@ -2,9 +2,10 @@
     "name": "mrcl29",
     "version": "1.0.0",
     "scripts": {
-        "ng": "ng",
-        "start": "ng serve",
+        "fetch-data": "node scripts/fetch-github.mjs",
+        "prebuild": "bun run fetch-data",
         "build": "ng build",
+        "start": "bun run fetch-data && ng serve",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
         "serve:ssr:mrcl29": "node dist/mrcl29/server/server.mjs"
@@ -43,6 +44,7 @@
         "@types/express": "^5.0.1",
         "@types/node": "^20.17.19",
         "autoprefixer": "^10.4.24",
+        "dotenv": "^17.3.1",
         "jsdom": "^27.1.0",
         "postcss": "^8.5.6",
         "tailwindcss": "^4.2.0",
