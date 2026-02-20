@@ -10,9 +10,15 @@
   --font-display: 'Outfit', sans-serif;
 }
 
+:root.light-mode {
+  --color-brand-primary: var(--color-brand-secondary);
+  --color-backgroud-primary: var(--color-backgroud-secondary);
+}
+
 html,
 body {
   background-color: var(--color-backgroud-primary);
   color: var(--color-brand-primary);
   font-family: var(--font-display);
+  /* transition: background-color 0.3s ease; */
 }

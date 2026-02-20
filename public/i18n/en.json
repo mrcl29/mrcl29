@@ -2,5 +2,8 @@
     "META": {
         "TITLE": "Marc Llobera - Home",
         "DESCRIPTION": "Welcome to Marc's portfolio"
+    },
+    "HEADER": {
+        "NAME": "Marc Llobera"
     }
 }

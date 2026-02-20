@@ -1,12 +1,20 @@
-<div class="p-2">
-  <header class="flex justify-between align-center mb-2">
-    <h1>{{ 'META.TITLE' | translate }}</h1>
+<header
+  class="w-full lg:w-1/2 mx-auto fixed top-0 left-0 right-0 flex justify-between items-center px-6 py-4 z-50 bg-(--color-backgroud-primary)">
+  <div class="flex items-center gap-3">
+    <img src="/image.webp" alt="Profile"
+      class="h-10 w-10 md:h-20 md:w-20 lg:h-30 lg:w-30 rounded-full border-6 border-neutral-800 object-cover lg:mr-5" />
+    <h1 class="lg:text-3xl md:text-2xl text-xl font-normal">
+      {{ 'HEADER.NAME' | translate }}</h1>
+  </div>
+  <div class="flex gap-5 items-center">
+    <app-theme-switcher></app-theme-switcher>
     <app-language-switcher></app-language-switcher>
-  </header>
+  </div>
+</header>
 
+<div class="w-full lg:w-1/2 mx-auto my-10 pt-20 px-4 mt-30">
   <main>
-    <p>{{ 'META.DESCRIPTION' | translate }}</p>
-  </main>
 
+  </main>
   <router-outlet></router-outlet>
 </div>
