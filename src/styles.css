@@ -15,10 +15,27 @@
   --color-backgroud-primary: var(--color-backgroud-secondary);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   background-color: var(--color-backgroud-primary);
   color: var(--color-brand-primary);
   font-family: var(--font-display);
   /* transition: background-color 0.3s ease; */
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

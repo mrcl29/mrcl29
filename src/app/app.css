@@ -1,1 +1,4 @@
 /* Styles for AppComponent */
+:host {
+  width: 100%;
+}

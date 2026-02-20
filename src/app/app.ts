@@ -1,16 +1,34 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, AfterViewInit, inject, PLATFORM_ID } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageSwitcherComponent } from './shared/components/language-switcher/language-switcher.component';
 import { ThemeSwitcherComponent } from './shared/components/theme-switcher/theme-switcher.component';
 
 @Component({
     selector: 'app-root',
-    imports: [RouterOutlet, TranslateModule, LanguageSwitcherComponent, ThemeSwitcherComponent],
+    imports: [CommonModule, RouterOutlet, TranslateModule, LanguageSwitcherComponent, ThemeSwitcherComponent],
     templateUrl: './app.html',
     styleUrl: './app.css',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class App {
-    title = 'mrcl29';
+export class App implements AfterViewInit {
+    title = 'Portfolio Marc Llobera';
+    private platformId = inject(PLATFORM_ID);
+    currentYear = new Date().getFullYear();
+
+    ngAfterViewInit() {
+        if (isPlatformBrowser(this.platformId)) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            const hiddenElements = document.querySelectorAll('.scroll-reveal');
+            hiddenElements.forEach((el) => observer.observe(el));
+        }
+    }
 }
