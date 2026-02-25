@@ -21,7 +21,7 @@ query {
           url
           homepageUrl
           repositoryTopics(first: 5) { nodes { topic { name } } }
-          languages(first: 3) { nodes { name } }
+          languages(first: 5) { nodes { name } }
         }
       }
     }
@@ -38,12 +38,43 @@ async function getRepos() {
     });
 
     const { data } = await res.json();
+
+    var nodes = data.user.pinnedItems.nodes;
+
     const path = './public/assets/repos.json';
 
     if (!fs.existsSync('./public/assets')) fs.mkdirSync('./public/assets', { recursive: true });
 
-    fs.writeFileSync(path, JSON.stringify(data.user.pinnedItems.nodes, null, 2));
-    console.log(`✅ ¡Éxito! Datos guardados en ${path}`);
+    if (nodes) {
+      nodes.forEach((node, index) => {
+        const languages = node.languages.nodes.map((lang) => lang.name);
+        const topics = node.repositoryTopics.nodes.map((topic) => topic.topic.name);
+        const techList = [...new Set([...languages, ...topics])];
+
+        node.tech = {};
+        techList.forEach((tech) => {
+          const lower = tech.toLowerCase();
+          const iconPath = `./public/assets/icons/${lower}/${lower}.svg`;
+          const iconDarkPath = `./public/assets/icons/${lower}/${lower}_dark.svg`;
+
+          if (fs.existsSync(iconPath)) {
+            node.tech[tech] = fs.readFileSync(iconPath, 'utf-8');
+          } else if (fs.existsSync(iconDarkPath)) {
+            node.tech[tech] = fs.readFileSync(iconDarkPath, 'utf-8');
+          } else {
+            node.tech[tech] = `assets/icons/${lower}/${lower}.svg`;
+          }
+        });
+
+        const animationNum = index + 1;
+        const animatedIconPath = `./public/assets/animated_icons/animation_${animationNum}_dark.svg`;
+        if (fs.existsSync(animatedIconPath)) {
+          node.animatedIcon = fs.readFileSync(animatedIconPath, 'utf-8');
+        }
+      });
+      fs.writeFileSync(path, JSON.stringify(nodes, null, 2));
+      console.log(`✅ ¡Éxito! Datos guardados en ${path}`);
+    }
   } catch (error) {
     console.error('❌ Error al obtener repositorios:', error);
     process.exit(1);
