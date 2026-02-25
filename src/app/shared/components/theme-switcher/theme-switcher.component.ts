@@ -9,7 +9,7 @@ import { ThemeService } from '../../../core/services/theme.service';
     template: `
     <button
       (click)="themeService.toggleTheme()"
-      class="hidden lg:inline-flex md:inline-flex items-center justify-center w-10 h-10 border rounded-full cursor-pointer bg-transparent border-(--color-brand-primary) text-(--color-brand-primary) transition-all duration-300 ease-in-out hover:opacity-70 hover:scale-110 active:scale-95"
+      class="hidden lg:inline-flex md:inline-flex items-center justify-center w-10 h-10 border rounded-full cursor-pointer bg-transparent border-(--color-brand-primary) text-(--color-brand-primary) hover:text-text-(--color-brand-secondary) transition-all duration-300 ease-in-out  hover:scale-110 active:scale-95 hover:bg-(--color-brand-auxiliar)"
       [attr.aria-label]="themeService.currentTheme() === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'">
 
       <!-- Icono Sol (visible en modo claro) -->

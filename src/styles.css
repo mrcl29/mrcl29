@@ -4,15 +4,18 @@
 
 :root {
   --color-brand-primary: #ffffff;
-  --color-backgroud-primary: #000000;
+  --color-backgroud-primary: #151312;
   --color-brand-secondary: #000000;
   --color-backgroud-secondary: #ffffff;
+  --color-brand-auxiliar: #5f7a20;
+  --color-brand-auxiliar-original: #5f7a20;
   --font-display: 'Outfit', sans-serif;
 }
 
 :root.light-mode {
   --color-brand-primary: var(--color-brand-secondary);
   --color-backgroud-primary: var(--color-backgroud-secondary);
+  --color-brand-auxiliar: #83aa28;
 }
 
 html {

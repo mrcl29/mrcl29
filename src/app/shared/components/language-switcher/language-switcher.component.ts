@@ -9,7 +9,7 @@ import { LanguageService } from '../../../core/services/language.service';
     template: `
     <button
       (click)="languageService.toggleLanguage()"
-      class="inline-flex items-center gap-1 ml-4 lg:ml-0 px-4 py-2 lg:text-sm text-xs border rounded-full cursor-pointer bg-transparent border-(--color-brand-primary) text-(--color-brand-primary) transition-all duration-300 ease-in-out hover:opacity-70 hover:scale-110 active:scale-95"
+      class="inline-flex items-center gap-1 ml-4 lg:ml-0 px-4 py-2 lg:text-sm text-xs border rounded-full cursor-pointer bg-transparent border-(--color-brand-primary) text-(--color-brand-primary) transition-all duration-300 ease-in-out hover:scale-110 active:scale-95 hover:bg-(--color-brand-auxiliar)"
       [attr.aria-label]="languageService.currentLang() === 'es' ? 'Switch to English' : 'Cambiar a Español'">
       <span [class.font-bold]="languageService.currentLang() === 'es'">ES</span>
       <span class="opacity-50 lg:text-sm text-xs">/</span>

@@ -2,7 +2,7 @@
   class="w-full lg:w-2/5 mx-auto fixed top-0 left-0 right-0 flex justify-between items-center px-6 py-4 z-50 bg-(--color-backgroud-primary)">
   <div class="flex items-center gap-3">
     <img src="/image.webp" alt="Profile"
-      class="h-10 w-10 md:h-20 md:w-20 lg:h-30 lg:w-30 rounded-full border-6 border-neutral-800 object-cover lg:mr-5" />
+      class="h-10 w-10 md:h-20 md:w-20 lg:h-30 lg:w-30 rounded-full border-3 border-(--color-brand-auxiliar-original) object-cover lg:mr-5" />
     <h1 class="lg:text-3xl md:text-2xl text-xl font-medium">
       {{ 'HEADER.NAME' | translate }}</h1>
   </div>
@@ -14,21 +14,25 @@
 
 <div class="w-full lg:w-2/5 mx-auto my-10 pt-20 px-4 mt-20">
   <main class="flex flex-col gap-12 mb-24">
-    <section id="intro" class="scroll-reveal">
-      <h2 class="text-2xl font-normal mb-4">{{ 'INTRO.CHARGE' | translate }}</h2>
+    <section id="intro" class="scroll-reveala">
+      <h2 class="text-2xl font-normal mb-4"><span
+          class="text-(--color-brand-auxiliar-original) text-3xl font-bold">&lt;/</span>
+        {{ 'INTRO.CHARGE' | translate }} <span
+          class="text-(--color-brand-auxiliar-original) text-3xl font-bold">&gt;</span>
+      </h2>
       <p class="text-base opacity-80">
         {{ 'INTRO.DESCRIPTION' | translate }}
       </p>
     </section>
 
-    <section id="experiencia" class="scroll-reveal">
+    <section id="experiencia" class="scroll-reveala">
       <h2 class="text-2xl font-medium mb-4">{{ 'EXPERIENCE.TITLE' | translate }}</h2>
       <p class="text-lg opacity-80">
         {{ 'EXPERIENCE.DESCRIPTION' | translate }}
       </p>
     </section>
 
-    <section id="proyectos" class="scroll-reveal">
+    <section id="proyectos" class="scroll-reveala">
       <h2 class="text-2xl font-medium mb-4">{{ 'PROJECTS.TITLE' | translate }}</h2>
       <p class="text-lg opacity-80">
         {{ 'PROJECTS.DESCRIPTION' | translate }}
@@ -40,14 +44,14 @@
       </div>
     </section>
 
-    <section id="herramientas" class="scroll-reveal">
+    <section id="herramientas" class="scroll-reveala">
       <h2 class="text-2xl font-medium mb-4">{{ 'TOOLS.TITLE' | translate }}</h2>
       <p class="text-lg opacity-80">
         {{ 'TOOLS.DESCRIPTION' | translate }}
       </p>
     </section>
 
-    <section id="contacto" class="scroll-reveal">
+    <section id="contacto" class="scroll-reveala">
       <h2 class="text-2xl font-medium mb-4">{{ 'CONTACT.TITLE' | translate }}</h2>
       <p class="text-lg opacity-80">
         {{ 'CONTACT.DESCRIPTION' | translate }}
@@ -55,7 +59,7 @@
     </section>
 
     <footer
-      class="scroll-reveala pt-10 border-t border-neutral-800 font-extralight text-center opacity-70 flex justify-between items-center">
+      class="scroll-reveala pt-10 border-t border-(--color-brand-auxiliar) font-extralight text-center opacity-70 flex justify-between items-center">
       <p>© {{ 'FOOTER.NAME' | translate }} {{ currentYear }}</p>
       <div class="bg-white rounded-full object-cover"><img src="/favicon.ico" alt="Profile" class="h-6 w-6" /></div>
     </footer>
