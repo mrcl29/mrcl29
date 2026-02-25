@@ -49,21 +49,42 @@ async function getRepos() {
       nodes.forEach((node, index) => {
         const languages = node.languages.nodes.map((lang) => lang.name);
         const topics = node.repositoryTopics.nodes.map((topic) => topic.topic.name);
-        const techList = [...new Set([...languages, ...topics])];
+
+        const seen = new Set();
+        const techList = [];
+        [...languages, ...topics].forEach((item) => {
+          if (!seen.has(item.toLowerCase())) {
+            seen.add(item.toLowerCase());
+            techList.push(item);
+          }
+        });
+
+        techList.sort((a, b) => a.localeCompare(b));
 
         node.tech = {};
         techList.forEach((tech) => {
           const lower = tech.toLowerCase();
           const iconPath = `./public/assets/icons/${lower}/${lower}.svg`;
           const iconDarkPath = `./public/assets/icons/${lower}/${lower}_dark.svg`;
+          const iconLightPath = `./public/assets/icons/${lower}/${lower}_light.svg`;
+
+          let icons = { dark: '', light: '' };
 
           if (fs.existsSync(iconPath)) {
-            node.tech[tech] = fs.readFileSync(iconPath, 'utf-8');
-          } else if (fs.existsSync(iconDarkPath)) {
-            node.tech[tech] = fs.readFileSync(iconDarkPath, 'utf-8');
-          } else {
-            node.tech[tech] = `assets/icons/${lower}/${lower}.svg`;
+            const content = fs.readFileSync(iconPath, 'utf-8');
+            icons.light = content;
+            icons.dark = content;
           }
+
+          if (fs.existsSync(iconDarkPath)) {
+            icons.dark = fs.readFileSync(iconDarkPath, 'utf-8');
+          }
+
+          if (fs.existsSync(iconLightPath)) {
+            icons.light = fs.readFileSync(iconLightPath, 'utf-8');
+          }
+
+          node.tech[tech] = icons;
         });
 
         const animationNum = index + 1;

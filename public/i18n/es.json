@@ -10,6 +10,22 @@
         "CHARGE": "Full-Stack Developer |  DevOps",
         "DESCRIPTION": "Más de 2 años desarrollando productos digitales desde la base de datos hasta la interfaz, asegurando siempre una integración continua eficiente. Mi trabajo se centra en escribir código funcional y gestionar la infraestructura que lo soporta."
     },
+    "EXPERIENCE": {
+        "TITLE": "Experiencia",
+        "DESCRIPTION": "Aquí se detalla mi experiencia profesional y trayectoria laboral."
+    },
+    "PROJECTS": {
+        "TITLE": "Proyectos",
+        "DESCRIPTION": "Una selección de mis proyectos más recientes y destacados."
+    },
+    "TOOLS": {
+        "TITLE": "Herramientas",
+        "DESCRIPTION": "Las tecnologías y herramientas que utilizo en mi día a día."
+    },
+    "CONTACT": {
+        "TITLE": "Contacto",
+        "DESCRIPTION": "Formas de contactar conmigo."
+    },
     "FOOTER": {
         "NAME": "Marc Llobera"
     }

@@ -14,24 +14,24 @@
 
 <div class="w-full lg:w-2/5 mx-auto my-10 pt-20 px-4 mt-20">
   <main class="flex flex-col gap-12 mb-24">
-    <section id="intro" class="scroll-reveala">
-      <h2 class="text-2xl font-light mb-4">{{ 'INTRO.CHARGE' | translate }}</h2>
+    <section id="intro" class="scroll-reveal">
+      <h2 class="text-2xl font-normal mb-4">{{ 'INTRO.CHARGE' | translate }}</h2>
       <p class="text-base opacity-80">
         {{ 'INTRO.DESCRIPTION' | translate }}
       </p>
     </section>
 
-    <section id="experiencia" class="scroll-reveala">
-      <h2 class="text-2xl font-light mb-4">Experiencia</h2>
+    <section id="experiencia" class="scroll-reveal">
+      <h2 class="text-2xl font-medium mb-4">{{ 'EXPERIENCE.TITLE' | translate }}</h2>
       <p class="text-lg opacity-80">
-        Aquí se detallará mi experiencia profesional y trayectoria laboral.
+        {{ 'EXPERIENCE.DESCRIPTION' | translate }}
       </p>
     </section>
 
-    <section id="proyectos" class="scroll-reveala">
-      <h2 class="text-2xl font-light mb-4">Proyectos</h2>
+    <section id="proyectos" class="scroll-reveal">
+      <h2 class="text-2xl font-medium mb-4">{{ 'PROJECTS.TITLE' | translate }}</h2>
       <p class="text-lg opacity-80">
-        Una selección de mis proyectos más recientes y destacados.
+        {{ 'PROJECTS.DESCRIPTION' | translate }}
       </p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
         @for(repo of repos(); track repo.name) {
@@ -40,17 +40,17 @@
       </div>
     </section>
 
-    <section id="herramientas" class="scroll-reveala">
-      <h2 class="text-2xl font-light mb-4">Herramientas</h2>
+    <section id="herramientas" class="scroll-reveal">
+      <h2 class="text-2xl font-medium mb-4">{{ 'TOOLS.TITLE' | translate }}</h2>
       <p class="text-lg opacity-80">
-        Las tecnologías y herramientas que utilizo en mi día a día.
+        {{ 'TOOLS.DESCRIPTION' | translate }}
       </p>
     </section>
 
-    <section id="contacto" class="scroll-reveala">
-      <h2 class="text-2xl font-light mb-4">Contacto</h2>
+    <section id="contacto" class="scroll-reveal">
+      <h2 class="text-2xl font-medium mb-4">{{ 'CONTACT.TITLE' | translate }}</h2>
       <p class="text-lg opacity-80">
-        Formas de contactar conmigo para colaboraciones o consultas.
+        {{ 'CONTACT.DESCRIPTION' | translate }}
       </p>
     </section>
 
