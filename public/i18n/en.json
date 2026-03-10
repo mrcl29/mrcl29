@@ -12,7 +12,51 @@
     },
     "EXPERIENCE": {
         "TITLE": "Experience",
-        "DESCRIPTION": "My professional experience and work history are detailed here."
+        "DESCRIPTION": "My professional experience and work history are detailed here.",
+        "EXPERIENCES": [
+            {
+                "TITLE": "Backend Developer",
+                "COMPANY": "Dialapplet",
+                "DESCRIPTION": "",
+                "POINTS": [],
+                "EXTRA": "",
+                "START": "January, 2026",
+                "END": "Now",
+                "TOOLS": [
+                    "java",
+                    "spring",
+                    "mongodb",
+                    "docker",
+                    "git",
+                    "gitlab"
+                ]
+            },
+            {
+                "TITLE": "Full-Stack Developer",
+                "COMPANY": "Alcort, Ingeniería y Asesoría",
+                "DESCRIPTION": "I designed robust full-stack solutions with a primary focus on backend scalability, database performance, and Linux infrastructure.",
+                "POINTS": [
+                    "Architected scalable backend services and RESTful APIs using Python and Flask, driving core system functionality and enabling seamless data integration across the platform.",
+                    "Reduced query execution latency and improved data retrieval speeds by re-engineering SQL table schemas and implementing optimized stored procedures for high-volume datasets.",
+                    "Ensured high availability in production by managing Enterprise Linux infrastructure and orchestrating resource-efficient virtualization using Proxmox and LXC containers.",
+                    "Guaranteed deployment stability and minimized code conflicts by establishing Git branching strategies for controlled release management."
+                ],
+                "EXTRA": "",
+                "START": "July, 2024",
+                "END": "September, 2025",
+                "TOOLS": [
+                    "html",
+                    "css",
+                    "javascript",
+                    "python",
+                    "flask",
+                    "mysql",
+                    "git",
+                    "linux",
+                    "shell"
+                ]
+            }
+        ]
     },
     "PROJECTS": {
         "TITLE": "Projects",
@@ -20,7 +64,89 @@
     },
     "TOOLS": {
         "TITLE": "Tech Stack",
-        "DESCRIPTION": "The technologies and tools I use in my daily life."
+        "DESCRIPTION": "The technologies and tools I use in my daily life.",
+        "LANGUAGES": [
+            [
+                "java",
+                "java.com"
+            ],
+            [
+                "python",
+                "python.com"
+            ],
+            [
+                "javascript",
+                "cpp.com"
+            ],
+            [
+                "typescript",
+                "cpp.com"
+            ],
+            [
+                "cpp",
+                "cpp.com"
+            ]
+        ],
+        "FRAMEWORKS": [
+            [
+                "spring",
+                "java.com"
+            ],
+            [
+                "fastapi",
+                "python.com"
+            ],
+            [
+                "nodejs",
+                "cpp.com"
+            ],
+            [
+                "react",
+                "cpp.com"
+            ],
+            [
+                "astro",
+                "cpp.com"
+            ],
+            [
+                "tailwind",
+                "cpp.com"
+            ]
+        ],
+        "DATABASES": [
+            [
+                "mysql",
+                "myssql.com"
+            ],
+            [
+                "postgresql",
+                "myssql.com"
+            ],
+            [
+                "mongo",
+                "myssql.com"
+            ]
+        ],
+        "CLOUD": [
+            [
+                "aws",
+                "aws.com"
+            ]
+        ],
+        "TOOLS": [
+            [
+                "docker",
+                "docker.com"
+            ],
+            [
+                "git",
+                "docker.com"
+            ],
+            [
+                "linux",
+                "docker.com"
+            ]
+        ]
     },
     "CONTACT": {
         "TITLE": "Contact",

@@ -12,7 +12,51 @@
     },
     "EXPERIENCE": {
         "TITLE": "Experiencia",
-        "DESCRIPTION": "Aquí se detalla mi experiencia profesional y trayectoria laboral."
+        "DESCRIPTION": "Aquí se detalla mi experiencia profesional y trayectoria laboral.",
+        "EXPERIENCES": [
+            {
+                "TITLE": "Desarrollador Backend",
+                "COMPANY": "Dialapplet",
+                "DESCRIPTION": "",
+                "POINTS": [],
+                "EXTRA": "",
+                "START": "Enero, 2026",
+                "END": "Actualidad",
+                "TOOLS": [
+                    "java",
+                    "spring",
+                    "mongodb",
+                    "docker",
+                    "git",
+                    "gitlab"
+                ]
+            },
+            {
+                "TITLE": "Desarrollador Full Stack",
+                "COMPANY": "Alcort, Ingeniería y Asesoría",
+                "DESCRIPTION": "Diseñé soluciones robustas de pila completa con un enfoque principal en la escalabilidad del backend, el rendimiento de la base de datos y la infraestructura Linux.",
+                "POINTS": [
+                    "Cree servicios backend escalables y API RESTful con Python y Flask, impulsando la funcionalidad principal del sistema y permitiendo una integración fluida de datos en toda la plataforma.",
+                    "Reduje la latencia de ejecución de consultas y mejoré la velocidad de recuperación de datos mediante la reingeniería de esquemas de tablas SQL y la implementación de procedimientos almacenados optimizados para conjuntos de datos de gran volumen.",
+                    "Se garantizó una alta disponibilidad en producción mediante la gestión de la infraestructura de Enterprise Linux y la orquestación de una virtualización eficiente en el uso de recursos mediante contenedores Proxmox y LXC.",
+                    "Se garantizó la estabilidad de la implementación y se minimizaron los conflictos de código mediante el establecimiento de estrategias de ramificación de Git para la gestión controlada de versiones."
+                ],
+                "EXTRA": "",
+                "START": "Julio, 2024",
+                "END": "Septiembre, 2025",
+                "TOOLS": [
+                    "html",
+                    "css",
+                    "javascript",
+                    "python",
+                    "flask",
+                    "mysql",
+                    "git",
+                    "linux",
+                    "shell"
+                ]
+            }
+        ]
     },
     "PROJECTS": {
         "TITLE": "Proyectos",
@@ -20,7 +64,89 @@
     },
     "TOOLS": {
         "TITLE": "Herramientas",
-        "DESCRIPTION": "Las tecnologías y herramientas que utilizo en mi día a día."
+        "DESCRIPTION": "Las tecnologías y herramientas que utilizo en mi día a día.",
+        "LANGUAGES": [
+            [
+                "java",
+                "java.com"
+            ],
+            [
+                "python",
+                "python.com"
+            ],
+            [
+                "javascript",
+                "cpp.com"
+            ],
+            [
+                "typescript",
+                "cpp.com"
+            ],
+            [
+                "cpp",
+                "cpp.com"
+            ]
+        ],
+        "FRAMEWORKS": [
+            [
+                "spring",
+                "java.com"
+            ],
+            [
+                "fastapi",
+                "python.com"
+            ],
+            [
+                "nodejs",
+                "cpp.com"
+            ],
+            [
+                "react",
+                "cpp.com"
+            ],
+            [
+                "astro",
+                "cpp.com"
+            ],
+            [
+                "tailwind",
+                "cpp.com"
+            ]
+        ],
+        "DATABASES": [
+            [
+                "mysql",
+                "myssql.com"
+            ],
+            [
+                "postgresql",
+                "myssql.com"
+            ],
+            [
+                "mongo",
+                "myssql.com"
+            ]
+        ],
+        "CLOUD": [
+            [
+                "aws",
+                "aws.com"
+            ]
+        ],
+        "TOOLS": [
+            [
+                "docker",
+                "docker.com"
+            ],
+            [
+                "git",
+                "docker.com"
+            ],
+            [
+                "linux",
+                "docker.com"
+            ]
+        ]
     },
     "CONTACT": {
         "TITLE": "Contacto",
