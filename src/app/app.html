@@ -1,5 +1,5 @@
 <header
-  class="w-full lg:w-2/5 mx-auto fixed top-0 left-0 right-0 flex justify-between items-center px-6 py-4 z-50 bg-(--color-backgroud-primary)">
+  class="w-full lg:w-2/5 mx-auto fixed top-0 left-0 right-0 flex justify-between items-center px-6 py-4 z-50 bg-(--color-background-primary)">
   <div class="flex items-center gap-3">
     <img src="/image.webp" alt="Profile"
       class="h-10 w-10 md:h-20 md:w-20 lg:h-30 lg:w-30 rounded-full border-3 border-(--color-brand-auxiliar-original) object-cover lg:mr-5" />
@@ -30,6 +30,17 @@
       <p class="text-lg opacity-80">
         {{ 'EXPERIENCE.DESCRIPTION' | translate }}
       </p>
+
+      <!-- Contenedor de la línea de tiempo de experiencias -->
+      @if(('EXPERIENCE.EXPERIENCES' | translate); as experiences) {
+        @if(experiences[0]?.TITLE) {
+          <div class="flex flex-col mt-10">
+            @for(exp of experiences; track exp.COMPANY) {
+              <app-experience-card [experience]="exp" />
+              }
+          </div>
+          }
+          }
     </section>
 
     <section id="proyectos" class="scroll-reveala">

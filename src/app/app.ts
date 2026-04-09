@@ -8,10 +8,11 @@ import { Repo } from './core/models/repo.model';
 import { LanguageSwitcherComponent } from './shared/components/language-switcher/language-switcher.component';
 import { ThemeSwitcherComponent } from './shared/components/theme-switcher/theme-switcher.component';
 import { RepoCardComponent } from './shared/components/repo-card/repo-card.component';
+import { ExperienceCardComponent } from './shared/components/experience-card/experience-card.component';
 
 @Component({
     selector: 'app-root',
-    imports: [CommonModule, RouterOutlet, TranslateModule, LanguageSwitcherComponent, ThemeSwitcherComponent, RepoCardComponent],
+    imports: [CommonModule, RouterOutlet, TranslateModule, LanguageSwitcherComponent, ThemeSwitcherComponent, RepoCardComponent, ExperienceCardComponent],
     templateUrl: './app.html',
     styleUrl: './app.css',
     changeDetection: ChangeDetectionStrategy.OnPush
