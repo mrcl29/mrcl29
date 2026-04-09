@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ThemeService } from '../../../core/services/theme.service';
 
@@ -6,6 +6,7 @@ import { ThemeService } from '../../../core/services/theme.service';
     selector: 'app-theme-switcher',
     standalone: true,
     imports: [CommonModule],
+    encapsulation: ViewEncapsulation.None,
     template: `
     <button
       (click)="themeService.toggleTheme()"
@@ -23,7 +24,42 @@ import { ThemeService } from '../../../core/services/theme.service';
       </svg>
     </button>
   `,
-    styles: []
+    styles: [`
+      ::view-transition-group(root) {
+        animation-duration: 0.7s;
+        /* Fallback a un ease-in-out si la variable no estuviera definida */
+        animation-timing-function: var(--expo-out, ease-in-out);
+      }
+
+      /* Por defecto (tu modo oscuro, ya que es el que no tiene clase) */
+      ::view-transition-new(root) {
+        animation-name: reveal-dark;
+        animation-fill-mode: both;
+      }
+
+      ::view-transition-old(root),
+      .light-mode::view-transition-old(root) {
+        animation: none;
+        animation-fill-mode: both;
+        z-index: -1;
+      }
+
+      /* Si cambiamos hacia la clase light-mode, usamos animación clara */
+      .light-mode::view-transition-new(root) {
+        animation-name: reveal-light;
+        animation-fill-mode: both;
+      }
+
+      @keyframes reveal-dark {
+        from { clip-path: polygon(50% -71%, -50% 71%, -50% 71%, 50% -71%); }
+        to   { clip-path: polygon(50% -71%, -50% 71%, 50% 171%, 171% 50%); }
+      }
+
+      @keyframes reveal-light {
+        from { clip-path: polygon(171% 50%, 50% 171%, 50% 171%, 171% 50%); }
+        to   { clip-path: polygon(171% 50%, 50% 171%, -50% 71%, 50% -71%); }
+      }
+    `]
 })
 export class ThemeSwitcherComponent {
     themeService = inject(ThemeService);

@@ -23,6 +23,20 @@ export class ThemeService {
     }
 
     toggleTheme() {
-        this.currentTheme.update(theme => theme === 'dark' ? 'light' : 'dark');
+        const switchTheme = () => {
+            this.currentTheme.update(theme => theme === 'dark' ? 'light' : 'dark');
+            // Actualizar el DOM síncronamente asegura que startViewTransition capture el estado final antes del render.
+            if (this.currentTheme() === 'light') {
+                this.document.documentElement.classList.add('light-mode');
+            } else {
+                this.document.documentElement.classList.remove('light-mode');
+            }
+        };
+
+        if (!('startViewTransition' in this.document)) {
+            switchTheme();
+        } else {
+            (this.document as any).startViewTransition(switchTheme);
+        }
     }
 }
