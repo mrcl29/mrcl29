@@ -9,6 +9,7 @@ import { LanguageSwitcherComponent } from './shared/components/language-switcher
 import { ThemeSwitcherComponent } from './shared/components/theme-switcher/theme-switcher.component';
 import { RepoCardComponent } from './shared/components/repo-card/repo-card.component';
 import { ExperienceCardComponent } from './shared/components/experience-card/experience-card.component';
+import { githubLink, linkedInLink } from "./shared/constants/links.constants";
 
 @Component({
     selector: 'app-root',
@@ -25,6 +26,8 @@ export class App implements AfterViewInit {
 
     private http = inject(HttpClient);
     repos = toSignal(this.http.get<Repo[]>('/assets/repos.json'), { initialValue: [] });
+    linkedInLink = linkedInLink;
+    githubLink = githubLink;
 
 
     ngAfterViewInit() {
