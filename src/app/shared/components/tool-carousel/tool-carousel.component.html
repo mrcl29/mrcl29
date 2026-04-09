@@ -1,0 +1,40 @@
+<div class="mb-6">
+  <!-- <h3 class="text-xl font-medium mb-4 text-(--color-brand-auxiliar) dark:text-(--color-brand-auxiliar-original)">
+    {{ () }}
+  </h3> -->
+
+  <div
+    class="carousel-container relative flex overflow-hidden w-full py-4">
+  <!-- <div
+    class="carousel-container relative flex overflow-hidden w-full bg-black/5 dark:bg-white/5 py-4 rounded-xl border border-black/10 dark:border-white/10"> -->
+    <!-- Máscaras de degradado para que desaparezcan suavemente por los bordes -->
+    <!-- <div
+      class="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-(--color-background-primary) to-transparent z-10 pointer-events-none">
+    </div>
+    <div
+      class="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-(--color-background-primary) to-transparent z-10 pointer-events-none">
+    </div> -->
+
+    <div class="flex w-max items-center" [class.animate-scroll-ltr]="direction() === 'ltr'"
+      [class.animate-scroll-rtl]="direction() === 'rtl'">
+      <!-- Iteramos 6 veces para asegurar que hay contenido suficiente para llenar cualquier pantalla y hacer el bucle infinito -->
+      @for(iteration of [1, 2, 3, 4, 5, 6]; track iteration) {
+        <div class="flex items-center justify-around px-4 gap-12 w-max">
+          @for(item of techList(); track item.name) {
+            <a [href]="item.link" target="_blank" rel="noopener noreferrer"
+              class="flex items-center justify-center hover:scale-110 transition-transform duration-300 group/icon cursor-pointer">
+              @if(item.isIcon) {
+                <div
+                  class="w-10 h-10 text-neutral-400 group-hover/icon:text-(--color-brand-auxiliar-original) transition-colors [&>svg]:w-full [&>svg]:h-full"
+                  [innerHTML]="item.icon" [title]="item.name"></div>
+                } @else {
+                <span
+                  class="text-sm px-3 py-1 rounded-full bg-black/10 dark:bg-white/10 opacity-80 uppercase tracking-wider">{{ item.name }}</span>
+                }
+            </a>
+            }
+        </div>
+        }
+    </div>
+  </div>
+</div>

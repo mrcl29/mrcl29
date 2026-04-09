@@ -87,6 +87,11 @@
       <p class="text-lg opacity-80">
         {{ 'TOOLS.DESCRIPTION' | translate }}
       </p>
+
+      <div class="flex flex-col gap-6 mt-10">
+        <app-tool-carousel [tools]="TOOLS_PART_1"></app-tool-carousel>
+        <app-tool-carousel [tools]="TOOLS_PART_2" direction="rtl"></app-tool-carousel>
+      </div>
     </section>
 
     <section id="contacto" class="scroll-reveal">

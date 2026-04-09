@@ -10,10 +10,12 @@ import { ThemeSwitcherComponent } from './shared/components/theme-switcher/theme
 import { RepoCardComponent } from './shared/components/repo-card/repo-card.component';
 import { ExperienceCardComponent } from './shared/components/experience-card/experience-card.component';
 import { githubLink, linkedInLink } from "./shared/constants/links.constants";
+import { ToolCarouselComponent } from './shared/components/tool-carousel/tool-carousel.component';
+import { TOOLS_PART_1, TOOLS_PART_2 } from './shared/constants/tools.constants';
 
 @Component({
     selector: 'app-root',
-    imports: [CommonModule, RouterOutlet, TranslateModule, LanguageSwitcherComponent, ThemeSwitcherComponent, RepoCardComponent, ExperienceCardComponent],
+    imports: [CommonModule, RouterOutlet, TranslateModule, LanguageSwitcherComponent, ThemeSwitcherComponent, RepoCardComponent, ExperienceCardComponent, ToolCarouselComponent],
     templateUrl: './app.html',
     styleUrl: './app.css',
     changeDetection: ChangeDetectionStrategy.OnPush
@@ -28,6 +30,8 @@ export class App implements AfterViewInit {
     repos = toSignal(this.http.get<Repo[]>('/assets/repos.json'), { initialValue: [] });
     linkedInLink = linkedInLink;
     githubLink = githubLink;
+    TOOLS_PART_1 = TOOLS_PART_1;
+    TOOLS_PART_2 = TOOLS_PART_2;
 
 
     ngAfterViewInit() {

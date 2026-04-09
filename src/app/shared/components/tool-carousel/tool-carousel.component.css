@@ -1,0 +1,30 @@
+.carousel-container:hover .animate-scroll-ltr,
+.carousel-container:hover .animate-scroll-rtl {
+  animation-play-state: paused;
+}
+
+.animate-scroll-ltr {
+  animation: scroll-ltr 40s linear infinite;
+}
+
+@keyframes scroll-ltr {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-rtl {
+  animation: scroll-rtl 40s linear infinite;
+}
+
+@keyframes scroll-rtl {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
