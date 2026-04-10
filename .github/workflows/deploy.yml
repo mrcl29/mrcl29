@@ -2,60 +2,60 @@ name: Desplegar Portfolio Angular con Bun
 
 # 1. ¿Cuándo se ejecutará esta acción?
 on:
-    # Se ejecuta cada vez que haces un push a la rama principal
-    push:
-        branches: ["main", "master"]
+  # Se ejecuta cada vez que haces un push a la rama principal
+  push:
+    branches: ["main", "master"]
 
-    # Se ejecuta automáticamente una vez por semana (Ej: Todos los Lunes a las 08:00 AM UTC)
-    # Sintaxis Cron: Minuto | Hora | Día del mes | Mes | Día de la semana
-    schedule:
-        - cron: "0 8 * * 1"
+  # Se ejecuta automáticamente una vez por semana (Ej: Todos los Lunes a las 08:00 AM UTC)
+  # Sintaxis Cron: Minuto | Hora | Día del mes | Mes | Día de la semana
+  schedule:
+    - cron: '0 8 * * 1'
 
-    # Permite ejecutar el script manualmente desde la pestaña "Actions" de GitHub
-    workflow_dispatch:
+  # Permite ejecutar el script manualmente desde la pestaña "Actions" de GitHub
+  workflow_dispatch:
 
 # 2. Permisos necesarios para publicar en GitHub Pages
 permissions:
-    contents: read
-    pages: write
-    id-token: write
+  contents: read
+  pages: write
+  id-token: write
 
 # 3. Evitar que se ejecuten despliegues duplicados al mismo tiempo
 concurrency:
-    group: "pages"
-    cancel-in-progress: false
+  group: "pages"
+  cancel-in-progress: false
 
 # 4. Los pasos reales de construcción y despliegue
 jobs:
-    build-and-deploy:
-        environment:
-            name: github-pages
-            url: ${{ steps.deployment.outputs.page_url }}
-        runs-on: ubuntu-latest
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: 📥 Descargar código
-              uses: actions/checkout@v4
+    steps:
+      - name: 📥 Descargar código
+        uses: actions/checkout@v4
 
-            - name: 🥟 Instalar Bun
-              uses: oven-sh/setup-bun@v1
-              with:
-                  bun-version: latest
+      - name: 🥟 Instalar Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
 
-            - name: 📦 Instalar dependencias
-              run: bun install
+      - name: 📦 Instalar dependencias
+        run: bun install
 
-            - name: 🏗️ Construir el proyecto Angular
-              # Nota: Si tu repositorio NO es "tu-usuario.github.io" sino que tiene el nombre de un proyecto,
-              # quizá necesites añadir la etiqueta --base-href al comando de build. Ejemplo:
-              # run: bun run build --base-href /nombre-del-repo/
-              run: bun run build
+      - name: 🏗️ Construir el proyecto Angular
+        env:
+          # GitHub inyecta este token automáticamente por ti
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bun run build
 
-            - name: 📤 Subir los archivos construidos
-              uses: actions/upload-pages-artifact@v3
-              with:
-                  path: "dist/mrcl29/browser"
+      - name: 📤 Subir los archivos construidos
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'dist/mrcl29/browser'
 
-            - name: 🚀 Desplegar en GitHub Pages
-              id: deployment
-              uses: actions/deploy-pages@v4
+      - name: 🚀 Desplegar en GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
