@@ -23,6 +23,21 @@
       <p class="text-base opacity-80">
         {{ 'INTRO.DESCRIPTION' | translate }}
       </p>
+
+      <div class="mt-8 flex justify-start">
+        <a [href]="'/assets/cv/' + ('INTRO.CV_FILE' | translate)" [download]="'INTRO.CV_FILE' | translate"
+          target="_blank" rel="noopener noreferrer"
+          class="group relative inline-flex items-center text-lg font-medium transition-colors duration-300 hover:text-(--color-brand-auxiliar-original)">
+          {{ 'INTRO.DOWNLOAD_CV' | translate }}
+          <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-y-1" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+          </svg>
+          <span
+            class="absolute left-0 -bottom-1 w-full h-[2px] bg-(--color-brand-auxiliar-original) scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+        </a>
+      </div>
     </section>
 
     <section id="experiencia" class="scroll-reveal">
@@ -99,6 +114,51 @@
       <p class="text-lg opacity-80">
         {{ 'CONTACT.DESCRIPTION' | translate }}
       </p>
+
+      <!-- Formulario de contacto -->
+      <form action="mailto:m.llobera@outlook.com" method="POST" enctype="text/plain" class="mt-8 flex flex-col gap-6">
+        <div class="flex flex-col md:flex-row gap-6">
+          <div class="flex flex-col flex-1 gap-2">
+            <label for="name"
+              class="text-sm opacity-80">{{ 'CONTACT.FORM.NAME' | translate }}</label>
+            <input type="text" id="name" name="Nombre" required
+              class="p-3 rounded-lg bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 focus:outline-none focus:border-(--color-brand-auxiliar-original) transition-colors">
+          </div>
+          <div class="flex flex-col flex-1 gap-2">
+            <label for="email"
+              class="text-sm opacity-80">{{ 'CONTACT.FORM.EMAIL' | translate }}</label>
+            <input type="email" id="email" name="Email" required
+              class="p-3 rounded-lg bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 focus:outline-none focus:border-(--color-brand-auxiliar-original) transition-colors">
+          </div>
+        </div>
+        <div class="flex flex-col gap-2">
+          <label for="message"
+            class="text-sm opacity-80">{{ 'CONTACT.FORM.MESSAGE' | translate }}</label>
+          <textarea id="message" name="Mensaje" rows="4" required
+            class="p-3 rounded-lg bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 focus:outline-none focus:border-(--color-brand-auxiliar-original) transition-colors resize-y"></textarea>
+        </div>
+        <button type="submit"
+          class="self-start px-8 py-3 rounded-lg bg-(--color-brand-auxiliar-original) text-white dark:text-black font-medium hover:scale-105 transition-transform duration-300 cursor-pointer">
+          {{ 'CONTACT.FORM.SUBMIT' | translate }}
+        </button>
+      </form>
+
+      <!-- Alternativa de contacto directo -->
+      <div class="mt-12 pt-8 border-t border-black/10 dark:border-white/10">
+        <p class="text-base opacity-80 mb-4">{{ 'CONTACT.ALTERNATIVE' | translate }}</p>
+        <a href="mailto:m.llobera@outlook.com"
+          class="group relative inline-flex items-center text-lg font-medium transition-colors duration-300 hover:text-(--color-brand-auxiliar-original)">
+          <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+            </path>
+          </svg>
+          m.llobera&#64;outlook.com
+          <span
+            class="absolute left-0 -bottom-1 w-full h-[2px] bg-(--color-brand-auxiliar-original) scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+        </a>
+      </div>
     </section>
 
     <footer

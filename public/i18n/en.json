@@ -8,7 +8,9 @@
     },
     "INTRO": {
         "CHARGE": "Full-Stack Developer | DevOps",
-        "DESCRIPTION": "Over 2 years of experience building digital products from the database to the UI while maintaining efficient continuous integration. My work focuses on writing functional code and managing the underlying infrastructure."
+        "DESCRIPTION": "Over 2 years of experience building digital products from the database to the UI while maintaining efficient continuous integration. My work focuses on writing functional code and managing the underlying infrastructure.",
+        "DOWNLOAD_CV": "CV",
+        "CV_FILE": "Marc_Llobera_CV_EN.pdf"
     },
     "EXPERIENCE": {
         "TITLE": "Experience",
@@ -68,7 +70,14 @@
     },
     "CONTACT": {
         "TITLE": "Contact",
-        "DESCRIPTION": "Ways to contact me."
+        "DESCRIPTION": "Ways to contact me.",
+        "FORM": {
+            "NAME": "Name",
+            "EMAIL": "Email",
+            "MESSAGE": "Message",
+            "SUBMIT": "Send Message"
+        },
+        "ALTERNATIVE": "Or if you prefer, send me an email directly to:"
     },
     "FOOTER": {
         "NAME": "Marc Llobera"
