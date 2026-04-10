@@ -1,7 +1,7 @@
 <header
   class="w-full lg:w-2/5 mx-auto fixed top-0 left-0 right-0 flex justify-between items-center px-6 py-4 z-50 bg-(--color-background-primary)">
   <div class="flex items-center gap-3">
-    <img src="/image.webp" alt="Profile"
+    <img src="image.webp" alt="Profile"
       class="h-10 w-10 md:h-20 md:w-20 lg:h-30 lg:w-30 rounded-full border-3 border-(--color-brand-auxiliar-original) object-cover lg:mr-5" />
     <h1 class="lg:text-3xl md:text-2xl text-xl font-medium">
       {{ 'HEADER.NAME' | translate }}</h1>
@@ -25,7 +25,7 @@
       </p>
 
       <div class="mt-8 flex justify-start">
-        <a [href]="'/assets/cv/' + ('INTRO.CV_FILE' | translate)" [download]="'INTRO.CV_FILE' | translate"
+        <a [href]="'assets/cv/' + ('INTRO.CV_FILE' | translate)" [download]="'INTRO.CV_FILE' | translate"
           target="_blank" rel="noopener noreferrer"
           class="group relative inline-flex items-center text-lg font-medium transition-colors duration-300 hover:text-(--color-brand-auxiliar-original)">
           {{ 'INTRO.DOWNLOAD_CV' | translate }}
@@ -165,7 +165,7 @@
     <footer
       class="scroll-reveal pt-10 border-t border-(--color-brand-auxiliar) font-extralight text-center opacity-70 flex justify-between items-center">
       <p>© {{ 'FOOTER.NAME' | translate }} {{ currentYear }}</p>
-      <div class="bg-white rounded-full object-cover"><img src="/favicon.ico" alt="Profile" class="h-6 w-6" /></div>
+      <div class="bg-white rounded-full object-cover"><img src="favicon.ico" alt="Profile" class="h-6 w-6" /></div>
     </footer>
   </main>
   <router-outlet></router-outlet>
