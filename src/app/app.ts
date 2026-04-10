@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject, afterNextRender, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, afterNextRender, ChangeDetectorRef, effect } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
@@ -34,31 +34,47 @@ export class App {
     TOOLS_PART_1 = TOOLS_PART_1;
     TOOLS_PART_2 = TOOLS_PART_2;
 
+    private observer: IntersectionObserver | null = null;
+
     constructor() {
         // En modo Zoneless, forzamos el repintado síncrono al terminar de cargar los JSON de idioma
         this.translateService.onLangChange.subscribe(() => {
             this.cdr.detectChanges();
+            this.observeScrollElements();
         });
         this.translateService.onDefaultLangChange.subscribe(() => {
             this.cdr.detectChanges();
+            this.observeScrollElements();
+        });
+
+        effect(() => {
+            // Al cambiar los repositorios, volvemos a buscar nuevos elementos en el DOM
+            this.repos();
+            this.observeScrollElements();
         });
 
         afterNextRender(() => {
-            const observer = new IntersectionObserver((entries) => {
+            this.observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
                         // Dejamos de observar el elemento una vez ya es visible (mejora el rendimiento)
-                        observer.unobserve(entry.target);
+                        this.observer?.unobserve(entry.target);
                     }
                 });
             }, { threshold: 0.1 });
 
-            // Pequeño delay para asegurar que ngx-translate y la hidratación han expandido el DOM
-            setTimeout(() => {
-                const hiddenElements = document.querySelectorAll('.scroll-reveal');
-                hiddenElements.forEach((el) => observer.observe(el));
-            }, 100);
+            this.observeScrollElements();
         });
+    }
+
+    private observeScrollElements() {
+        if (!this.observer) return; // Aseguramos que el observer ya esté inicializado
+
+        // Pequeño delay para asegurar que ngx-translate y la hidratación han expandido el DOM
+        setTimeout(() => {
+            const hiddenElements = document.querySelectorAll('.scroll-reveal:not(.visible)');
+            hiddenElements.forEach((el) => this.observer?.observe(el));
+        }, 100);
     }
 }
