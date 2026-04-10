@@ -1,6 +1,6 @@
-import { Component, ChangeDetectionStrategy, AfterViewInit, inject, PLATFORM_ID } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, afterNextRender } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { TranslateModule } from '@ngx-translate/core';
@@ -20,10 +20,8 @@ import { TOOLS_PART_1, TOOLS_PART_2 } from './shared/constants/tools.constants';
     styleUrl: './app.css',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-
-export class App implements AfterViewInit {
+export class App {
     title = 'Portfolio Marc Llobera';
-    private platformId = inject(PLATFORM_ID);
     currentYear = new Date().getFullYear();
 
     private http = inject(HttpClient);
@@ -33,19 +31,23 @@ export class App implements AfterViewInit {
     TOOLS_PART_1 = TOOLS_PART_1;
     TOOLS_PART_2 = TOOLS_PART_2;
 
-
-    ngAfterViewInit() {
-        if (isPlatformBrowser(this.platformId)) {
+    constructor() {
+        afterNextRender(() => {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
+                        // Dejamos de observar el elemento una vez ya es visible (mejora el rendimiento)
+                        observer.unobserve(entry.target);
                     }
                 });
             }, { threshold: 0.1 });
 
-            const hiddenElements = document.querySelectorAll('.scroll-reveal');
-            hiddenElements.forEach((el) => observer.observe(el));
-        }
+            // Pequeño delay para asegurar que ngx-translate y la hidratación han expandido el DOM
+            setTimeout(() => {
+                const hiddenElements = document.querySelectorAll('.scroll-reveal');
+                hiddenElements.forEach((el) => observer.observe(el));
+            }, 100);
+        });
     }
 }
