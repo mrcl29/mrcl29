@@ -28,16 +28,19 @@ export class App {
     private cdr = inject(ChangeDetectorRef);
     private translateService = inject(TranslateService);
 
-    repos = toSignal(this.http.get<Repo[]>('/assets/repos.json'), { initialValue: [] });
+    repos = toSignal(this.http.get<Repo[]>('assets/repos.json'), { initialValue: [] });
     linkedInLink = linkedInLink;
     githubLink = githubLink;
     TOOLS_PART_1 = TOOLS_PART_1;
     TOOLS_PART_2 = TOOLS_PART_2;
 
     constructor() {
-        // Forzar repintado de la vista cuando las traducciones finalicen de cargar asíncronamente
+        // En modo Zoneless, forzamos el repintado síncrono al terminar de cargar los JSON de idioma
         this.translateService.onLangChange.subscribe(() => {
-            this.cdr.markForCheck();
+            this.cdr.detectChanges();
+        });
+        this.translateService.onDefaultLangChange.subscribe(() => {
+            this.cdr.detectChanges();
         });
 
         afterNextRender(() => {
