@@ -1,9 +1,9 @@
-import { Component, ChangeDetectionStrategy, inject, afterNextRender } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, afterNextRender, ChangeDetectorRef } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Repo } from './core/models/repo.model';
 import { LanguageSwitcherComponent } from './shared/components/language-switcher/language-switcher.component';
 import { ThemeSwitcherComponent } from './shared/components/theme-switcher/theme-switcher.component';
@@ -25,6 +25,9 @@ export class App {
     currentYear = new Date().getFullYear();
 
     private http = inject(HttpClient);
+    private cdr = inject(ChangeDetectorRef);
+    private translateService = inject(TranslateService);
+
     repos = toSignal(this.http.get<Repo[]>('/assets/repos.json'), { initialValue: [] });
     linkedInLink = linkedInLink;
     githubLink = githubLink;
@@ -32,6 +35,11 @@ export class App {
     TOOLS_PART_2 = TOOLS_PART_2;
 
     constructor() {
+        // Forzar repintado de la vista cuando las traducciones finalicen de cargar asíncronamente
+        this.translateService.onLangChange.subscribe(() => {
+            this.cdr.markForCheck();
+        });
+
         afterNextRender(() => {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
