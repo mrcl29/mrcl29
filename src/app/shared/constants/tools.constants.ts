@@ -5,43 +5,43 @@ export const ALL_TOOLS = [
     ],
     [
         "python",
-        "python.com"
+        "python.org"
     ],
     [
         "javascript",
-        "cpp.com"
+        "developer.mozilla.org/es/docs/Web/JavaScript"
     ],
     [
         "typescript",
-        "cpp.com"
+        "typescriptlang.org"
     ],
     [
         "cpp",
-        "cpp.com"
+        "w3schools.com/cpp/cpp_intro.asp"
     ],
     [
         "spring",
-        "java.com"
+        "spring.io"
     ],
     [
         "fastapi",
-        "python.com"
+        "fastapi.tiangolo.com"
     ],
     [
         "nodejs",
-        "cpp.com"
+        "nodejs.org"
     ],
     [
         "react",
-        "cpp.com"
+        "react.dev"
     ],
     [
         "astro",
-        "cpp.com"
+        "astro.build"
     ],
     [
         "tailwind",
-        "cpp.com"
+        "tailwindcss.com"
     ],
     [
         "mysql",
@@ -49,15 +49,15 @@ export const ALL_TOOLS = [
     ],
     [
         "postgresql",
-        "myssql.com"
+        "postgresql.org"
     ],
     [
         "mongo",
-        "myssql.com"
+        "mongodb.com"
     ],
     [
         "aws",
-        "aws.com"
+        "aws.amazon.com"
     ],
     [
         "docker",
@@ -65,11 +65,11 @@ export const ALL_TOOLS = [
     ],
     [
         "git",
-        "docker.com"
+        "git-scm.com"
     ],
     [
         "linux",
-        "docker.com"
+        "wikipedia.org/wiki/GNU/Linux"
     ]
 ];
 
