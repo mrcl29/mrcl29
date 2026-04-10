@@ -10,12 +10,15 @@
   --color-brand-auxiliar: #83aa28;
   --color-brand-auxiliar-original: #5f7a20;
   --font-display: 'Outfit', sans-serif;
+  --color-form: #777777;
+  --color-form-2: #3a3a3a;
 }
 
 :root.light-mode {
   --color-brand-primary: var(--color-brand-secondary);
   --color-background-primary: var(--color-background-secondary);
   --color-brand-auxiliar: #83aa28;
+  --color-form: var(--color-form-2);
 }
 
 html {

@@ -123,20 +123,20 @@
             <label for="name"
               class="text-sm opacity-80">{{ 'CONTACT.FORM.NAME' | translate }}</label>
             <input type="text" id="name" name="name" required
-              class="p-3 rounded-lg bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 focus:outline-none focus:border-(--color-brand-auxiliar-original) transition-colors">
+              class="p-3 rounded-lg bg-gray-100 dark:bg-white/5 border border-(--color-form) focus:outline-none focus:border-(--color-brand-auxiliar-original) transition-colors">
           </div>
           <div class="flex flex-col flex-1 gap-2">
             <label for="email"
               class="text-sm opacity-80">{{ 'CONTACT.FORM.EMAIL' | translate }}</label>
             <input type="email" id="email" name="email" required
-              class="p-3 rounded-lg bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 focus:outline-none focus:border-(--color-brand-auxiliar-original) transition-colors">
+              class="p-3 rounded-lg bg-gray-100 dark:bg-white/5 border border-(--color-form) focus:outline-none focus:border-(--color-brand-auxiliar-original) transition-colors">
           </div>
         </div>
         <div class="flex flex-col gap-2">
           <label for="message"
             class="text-sm opacity-80">{{ 'CONTACT.FORM.MESSAGE' | translate }}</label>
           <textarea id="message" name="message" rows="4" required
-            class="p-3 rounded-lg bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 focus:outline-none focus:border-(--color-brand-auxiliar-original) transition-colors resize-y"></textarea>
+            class="p-3 rounded-lg bg-gray-100 dark:bg-white/5 border border-(--color-form) focus:outline-none focus:border-(--color-brand-auxiliar-original) transition-colors resize-y"></textarea>
         </div>
         <button type="submit"
           class="self-start px-8 py-3 rounded-lg bg-(--color-brand-auxiliar) text-white dark:text-black font-medium hover:scale-105 transition-transform duration-300 cursor-pointer">
@@ -145,7 +145,7 @@
       </form>
 
       <!-- Alternativa de contacto directo -->
-      <div class="mt-12 pt-8 border-t border-black/10 dark:border-white/10">
+      <div class="mt-12 pt-8 border-t border-(--color-brand-primary)/30">
         <p class="text-base opacity-80 mb-4">{{ 'CONTACT.ALTERNATIVE' | translate }}</p>
         <a href="mailto:m.llobera@outlook.com"
           class="group relative inline-flex items-center text-lg font-medium transition-colors duration-300 hover:text-(--color-brand-auxiliar-original)">
