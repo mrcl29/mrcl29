@@ -49,7 +49,7 @@ jobs:
         env:
           # GitHub inyecta este token automáticamente por ti
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: bun run build
+        run: bun run build --base-href /mrcl29/
 
       - name: 📤 Subir los archivos construidos
         uses: actions/upload-pages-artifact@v3
