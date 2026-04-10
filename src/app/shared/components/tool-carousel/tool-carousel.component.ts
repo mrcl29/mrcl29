@@ -43,9 +43,9 @@ export class ToolCarouselComponent {
             const toolsArray = this.tools() || [];
             toolsArray.forEach(([toolName]) => {
                 const toolKey = toolName.toLowerCase();
-                const iconPath = `/assets/icons/${toolKey}/${toolKey}.svg`;
-                const iconDarkPath = `/assets/icons/${toolKey}/${toolKey}_dark.svg`;
-                const iconLightPath = `/assets/icons/${toolKey}/${toolKey}_light.svg`;
+                const iconPath = `assets/icons/${toolKey}/${toolKey}.svg`;
+                const iconDarkPath = `assets/icons/${toolKey}/${toolKey}_dark.svg`;
+                const iconLightPath = `assets/icons/${toolKey}/${toolKey}_light.svg`;
 
                 this.http.get(iconPath, { responseType: 'text' }).pipe(
                     map(content => ({ dark: content, light: content })),

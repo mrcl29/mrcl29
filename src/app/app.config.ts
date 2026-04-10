@@ -8,7 +8,7 @@ import { TranslateHttpLoader, TRANSLATE_HTTP_LOADER_CONFIG } from '@ngx-translat
 
 export function HttpLoaderFactory(http: HttpClient) {
     // Use an absolute path (starts with /) to fix the 404 in SSR
-    return new (TranslateHttpLoader as any)(http, '/i18n/', '.json');
+    return new (TranslateHttpLoader as any)(http, 'i18n/', '.json');
 }
 
 export const appConfig: ApplicationConfig = {
@@ -21,7 +21,7 @@ export const appConfig: ApplicationConfig = {
             provide: TRANSLATE_HTTP_LOADER_CONFIG,
             useValue: {
                 // Must match the absolute path used in the factory
-                prefix: '/i18n/',
+                prefix: 'i18n/',
                 suffix: '.json'
             }
         },
