@@ -4,10 +4,12 @@ import { HttpClient } from '@angular/common/http';
 import { ThemeService } from '../../../core/services/theme.service';
 import { forkJoin, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-experience-card',
     standalone: true,
+    imports: [TranslateModule],
     templateUrl: './experience-card.component.html'
 })
 export class ExperienceCardComponent {
@@ -17,6 +19,9 @@ export class ExperienceCardComponent {
     private sanitizer = inject(DomSanitizer);
     private themeService = inject(ThemeService);
     private http = inject(HttpClient);
+
+    // Estado para controlar si los puntos están expandidos
+    isExpanded = signal(false);
 
     // Almacena un diccionario con las versiones de cada herramienta: { 'java': { dark: '...', light: '...' } }
     techData = signal<Record<string, { dark: string; light: string }>>({});

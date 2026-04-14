@@ -7,7 +7,11 @@
 
   <!-- Fechas -->
   <div class="text-sm font-mono opacity-60 tracking-wider mb-2">
+    @if(experience().END == "Now" || experience().END == "Actualidad") {
+    {{ experience().END }}
+    } @else {
     {{ experience().START }} &mdash; {{ experience().END }}
+    }
   </div>
 
   <!-- Cargo y Empresa -->
@@ -25,11 +29,32 @@
 
     <!-- Puntos Clave -->
     @if(experience().POINTS && experience().POINTS.length > 0) {
-      <ul class="list-disc list-outside ml-4 opacity-80 text-sm flex flex-col gap-2 mb-4 leading-relaxed">
-        @for(point of experience().POINTS; track point) {
-          <li>{{ point }}</li>
+
+      <div class="grid transition-all duration-300 ease-in-out"
+        [style.grid-template-rows]="isExpanded() ? '1fr' : '0fr'">
+        <div class="overflow-hidden">
+          <ul class="list-disc list-outside ml-4 opacity-80 text-sm flex flex-col gap-2 mb-4 leading-relaxed">
+            @for(point of experience().POINTS; track point) {
+              <li>{{ point }}</li>
+              }
+          </ul>
+        </div>
+      </div>
+
+      <button (click)="isExpanded.set(!isExpanded())"
+        class="flex items-center gap-1 text-sm transition-colors duration-300 hover:text-(--color-brand-auxiliar-original) font-medium mb-4 hover:opacity-80 transition-opacity focus:outline-none cursor-pointer">
+        @if(isExpanded()) {
+          <span>{{ 'EXPERIENCE.CLOSE' | translate }}</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+          </svg>
+          } @else {
+          <span>{{ 'EXPERIENCE.MORE' | translate }}</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
           }
-      </ul>
+      </button>
       }
 
       <!-- Herramientas / Stack -->

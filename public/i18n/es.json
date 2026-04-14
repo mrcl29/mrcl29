@@ -7,20 +7,28 @@
         "NAME": "Marc Llobera"
     },
     "INTRO": {
-        "CHARGE": "Full-Stack Developer |  DevOps",
+        "CHARGE": "Ingeniero Informático | Desarrollador Full Stack | Arquitecto Cloud",
         "DESCRIPTION": "Más de 2 años desarrollando productos digitales desde la base de datos hasta la interfaz, asegurando siempre una integración continua eficiente. Mi trabajo se centra en escribir código funcional y gestionar la infraestructura que lo soporta.",
         "DOWNLOAD_CV": "CV",
-        "CV_FILE": "Marc_Llobera_CV.pdf"
+        "CV_FILE": "CV - Marc Llobera Villalonga (Esp).pdf"
     },
     "EXPERIENCE": {
         "TITLE": "Experiencia",
         "DESCRIPTION": "Aquí se detalla mi experiencia profesional y trayectoria laboral.",
+        "MORE": "Ver más",
+        "CLOSE": "Cerrar",
         "EXPERIENCES": [
             {
                 "TITLE": "Desarrollador Backend",
-                "COMPANY": "Dialapplet",
-                "DESCRIPTION": "",
-                "POINTS": [],
+                "COMPANY": "DialApplet",
+                "DESCRIPTION": "Diseño y despliegue de soluciones robustas basadas en Spring Boot y NoSQL, garantizando sistemas mantenibles y procesos de entrega continua estables mediante la aplicación de buenas prácticas y arquitecturas por capas.",
+                "POINTS": [
+                    "Desarrollo de microservicios con Spring Boot en una arquitectura escalable orientada a alta disponibilidad.",
+                    "Diseño e implementación de APIs REST, integrando bases de datos NoSQL (MongoDB, Redis).",
+                    "Aplicación de principios de Clean Architecture y arquitectura por capas, mejorando la mantenibilidad del sistema.",
+                    "Implementación y gestión de pipelines CI/CD en GitLab, asegurando despliegues estables en producción.",
+                    "Uso de buenas prácticas de desarrollo (Git, branching, releases), optimizando la colaboración y calidad del código."
+                ],
                 "EXTRA": "",
                 "START": "Enero, 2026",
                 "END": "Actualidad",

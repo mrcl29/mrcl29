@@ -7,23 +7,31 @@
         "NAME": "Marc Llobera"
     },
     "INTRO": {
-        "CHARGE": "Full-Stack Developer | DevOps",
+        "CHARGE": "Computer Engineer | Full Stack Developer | Cloud Architect",
         "DESCRIPTION": "Over 2 years of experience building digital products from the database to the UI while maintaining efficient continuous integration. My work focuses on writing functional code and managing the underlying infrastructure.",
         "DOWNLOAD_CV": "CV",
-        "CV_FILE": "Marc_Llobera_CV_EN.pdf"
+        "CV_FILE": "CV - Marc Llobera Villalonga (Eng).pdf"
     },
     "EXPERIENCE": {
         "TITLE": "Experience",
         "DESCRIPTION": "My professional experience and work history are detailed here.",
+        "MORE": "See more",
+        "CLOSE": "Close",
         "EXPERIENCES": [
             {
                 "TITLE": "Backend Developer",
-                "COMPANY": "Dialapplet",
-                "DESCRIPTION": "",
-                "POINTS": [],
+                "COMPANY": "DialApplet",
+                "DESCRIPTION": "Design and deployment of robust solutions based on Spring Boot and NoSQL, ensuring maintainable systems and stable continuous delivery processes through the application of best practices and layered architectures.",
+                "POINTS": [
+                    "Development of microservices with Spring Boot in a scalable architecture geared towards high availability.",
+                    "Design and implementation of REST APIs, integrating NoSQL databases (MongoDB, Redis).",
+                    "Application of Clean Architecture principles and layered architecture, improving system maintainability.",
+                    "Implementation and management of CI/CD pipelines in GitLab, ensuring stable production deployments.",
+                    "Use of best development practices (Git, branching, releases), optimizing collaboration and code quality."
+                ],
                 "EXTRA": "",
                 "START": "January, 2026",
-                "END": "Now",
+                "END": "Present",
                 "TOOLS": [
                     "java",
                     "spring",
@@ -34,7 +42,7 @@
                 ]
             },
             {
-                "TITLE": "Full-Stack Developer",
+                "TITLE": "Full Stack Developer",
                 "COMPANY": "Alcort, Ingeniería y Asesoría",
                 "DESCRIPTION": "I designed robust full-stack solutions with a primary focus on backend scalability, database performance, and Linux infrastructure.",
                 "POINTS": [
