@@ -28,9 +28,7 @@
 
 <h3>Connect with me:</h3>
 <p align="center">
-  <a href="https://linkedin.com/in/marc-llobera-villalonga" target="_blank"><img src="https://raw.githubusercontent.com/teamedwardforever/Readme-Generator/71f25dd8b98329b168142a6b782a107b75eab178/svg/Social/linked-in-alt.svg" alt="marc-llobera-villalonga" height="35" width="45" /></a>
-  <a href="https://www.leetcode.com/mrcl29" target="_blank"><img src="https://raw.githubusercontent.com/teamedwardforever/Readme-Generator/71f25dd8b98329b168142a6b782a107b75eab178/svg/Social/leet-code.svg" alt="mrcl29" height="35" width="45" /></a>
-  <a href="https://instagram.com/llobera29" target="_blank"><img src="https://raw.githubusercontent.com/teamedwardforever/Readme-Generator/71f25dd8b98329b168142a6b782a107b75eab178/svg/Social/instagram.svg" alt="llobera29" height="35" width="45" /></a>
+  <a href="https://linkedin.com/in/marc-llobera-villalonga" target="_blank"><img src="https://raw.githubusercontent.com/teamedwardforever/Readme-Generator/71f25dd8b98329b168142a6b782a107b75eab178/svg/Social/linked-in-alt.svg" alt="marc-llobera-villalonga" height="35" width="45" /></a> &nbsp;&nbsp; <a href="https://www.leetcode.com/mrcl29" target="_blank"><img src="https://raw.githubusercontent.com/teamedwardforever/Readme-Generator/71f25dd8b98329b168142a6b782a107b75eab178/svg/Social/leet-code.svg" alt="mrcl29" height="35" width="45" /></a> &nbsp;&nbsp; <a href="https://instagram.com/llobera29" target="_blank"><img src="https://raw.githubusercontent.com/teamedwardforever/Readme-Generator/71f25dd8b98329b168142a6b782a107b75eab178/svg/Social/instagram.svg" alt="llobera29" height="35" width="45" /></a>
 </p>
 
 <br>
