@@ -3,7 +3,7 @@
 <img src="https://raw.githubusercontent.com/BEPb/BEPb/5c63fa170d1cbbb0b1974f05a3dbe6aca3f5b7f3/assets/Bottom_up.svg" width="100%" />
 
 <h1>Hi 👋, I'm Marc Llobera</h1>
-<h3>Full-Stack and DevOps Developer</h3>
+<h3>Full-Stack Developer and Cloud Architect</h3>
 
 <p>
   <img src="https://komarev.com/ghpvc/?username=mrcl29&label=Profile%20views&color=0e75b6&style=flat" alt="mrcl29" />
