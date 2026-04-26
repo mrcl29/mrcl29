@@ -13,6 +13,36 @@ const app = express();
 const angularApp = new AngularNodeAppEngine();
 
 /**
+ * SSRF and Header Injection Protection Middleware
+ * This validates the Host and X-Forwarded-Host headers to prevent arbitrary request steering.
+ */
+const ALLOWED_HOSTS = new Set(['localhost', 'mrcl29.com', 'mrcl29.github.io']);
+
+app.use((req, res, next) => {
+  const hostHeader = (req.headers['x-forwarded-host'] ?? req.headers['host'])?.toString();
+  const portHeader = req.headers['x-forwarded-port']?.toString();
+
+  if (hostHeader) {
+    const hostname = hostHeader.split(':')[0];
+    // Reject if hostname contains invalid characters or is not in the allowlist
+    if (!/^[a-z0-9.:-]+$/i.test(hostname) || !ALLOWED_HOSTS.has(hostname)) {
+      console.warn(`[Security Check] Blocking request from untrusted host: ${hostname}`);
+      res.status(400).send('Invalid Hostname');
+      return;
+    }
+  }
+
+  // Ensure port is strictly numeric if provided
+  if (portHeader && !/^\d+$/.test(portHeader)) {
+    console.warn(`[Security Check] Blocking request with invalid port: ${portHeader}`);
+    res.status(400).send('Invalid Port');
+    return;
+  }
+
+  next();
+});
+
+/**
  * Example Express Rest API endpoints can be defined here.
  * Uncomment and define endpoints as necessary.
  *
