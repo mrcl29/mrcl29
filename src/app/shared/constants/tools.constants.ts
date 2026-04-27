@@ -70,6 +70,22 @@ export const ALL_TOOLS = [
     [
         "linux",
         "wikipedia.org/wiki/GNU/Linux"
+    ],
+    [
+        "nextjs",
+        "nextjs.org"
+    ],
+    [
+        "kafka",
+        "kafka.apache.org"
+    ],
+    [
+        "kubernetes",
+        "kubernetes.io"
+    ],
+    [
+        "bun",
+        "bun.com"
     ]
 ];
 
